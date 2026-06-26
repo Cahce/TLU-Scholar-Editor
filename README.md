@@ -1,6 +1,6 @@
 # TLU Scholar Editor
 
-Hệ thống soạn thảo luận văn trực tuyến sử dụng Typst cho Đại học Thăng Long.
+Hệ thống soạn thảo luận văn trực tuyến sử dụng Typst cho Đại học Thủy Lợi.
 
 ## 📁 Cấu trúc dự án
 
@@ -281,7 +281,7 @@ npm run test
 
 ## 👥 Contributors
 
-Developed for Thang Long University
+Developed for Thuy Loi University
 
 ## 📞 Support
 
