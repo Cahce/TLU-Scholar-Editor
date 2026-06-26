@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 85.000 27.000" width="85.000" height="27.000" data-width="85.000" data-height="27.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"><path id="gIM1zLiAD" class="outline_glyph" d="M 104 590 L 104 95 C 104 45 99 43 47 43 C 26 43 16 36 16 22 C 16 4 31 0 54 0 L 324 0 C 349 0 361 7 361 22 C 361 36 350 43 329 43 C 277 43 273 45 273 95 L 273 310 L 302 310 L 450 83 C 475 43 490 20 494 14 C 500 5 512 0 530 0 L 666 0 C 691 0 703 7 703 22 C 703 33 697 40 685 42 C 660 47 625 82 579 146 C 534 208 494 267 459 322 C 573 344 630 402 630 496 C 630 563 600 613 540 644 C 488 671 429 685 364 685 L 54 685 C 29 685 16 678 16 663 C 16 649 26 642 47 642 C 99 642 104 640 104 590 Z M 535 597 C 570 576 587 542 587 496 C 587 427 547 385 468 368 C 485 396 494 438 494 495 C 494 552 483 596 462 629 C 487 622 512 612 535 597 Z M 452 495 C 452 433 441 394 419 378 C 397 362 348 353 273 353 L 273 593 C 273 630 287 642 330 642 C 425 642 452 595 452 495 Z M 413 316 C 496 184 561 93 610 43 L 525 43 L 352 311 C 357 312 361 312 364 312 C 378 312 394 313 413 316 Z M 140 642 L 240 642 C 234 631 231 616 231 596 L 231 93 C 231 72 233 55 237 43 L 140 43 C 144 55 146 72 146 93 L 146 592 C 146 613 144 630 140 642 Z "/><path id="gIM1zLjQD" class="outline_glyph" d="M 809 605 L 867 680 L 846 693 L 813 655 C 800 642 786 635 770 635 C 765 635 755 636 740 639 C 691 647 646 656 604 667 L 611 694 L 601 699 L 545 674 C 526 677 506 678 486 678 C 398 678 324 654 263 606 C 210 563 177 519 165 472 C 155 435 168 407 198 407 C 207 407 219 412 233 422 C 243 431 249 441 252 454 L 252 466 C 253 492 255 513 259 528 C 264 549 282 571 312 595 C 351 626 398 642 452 642 C 479 642 503 639 523 634 L 455 379 L 309 379 L 283 343 L 446 343 L 423 261 C 412 219 399 185 384 158 C 354 103 284 32 209 32 C 166 32 141 51 133 89 C 128 116 117 129 102 129 C 89 129 76 125 65 117 C 39 99 32 56 54 27 C 75 -1 105 -15 146 -15 C 187 -15 228 -7 271 9 C 395 56 475 152 510 298 L 521 343 L 642 343 L 677 379 L 530 379 L 591 615 C 637 600 675 587 705 578 C 724 571 738 568 747 568 C 770 568 790 580 809 605 Z "/><path id="gIM1zLs0L" class="outline_glyph" d="M 293 -201 C 340 -155 394 -93 455 -16 L 426 110 C 423 124 422 137 422 150 C 422 252 423 323 426 362 C 429 405 435 436 444 456 L 434 466 L 362 426 C 317 436 280 451 251 471 C 187 433 133 399 88 368 C 78 301 73 235 73 168 C 73 145 74 110 77 64 L 146 -22 C 91 -69 47 -104 14 -127 L 30 -146 L 65 -127 C 133 -182 197 -209 256 -209 C 264 -209 276 -206 293 -201 Z M 176 386 C 214 369 270 355 343 345 C 337 282 334 209 334 125 L 228 47 C 199 75 178 101 165 125 C 162 162 160 206 160 258 C 160 314 165 357 176 386 Z M 294 -128 C 251 -128 205 -103 154 -53 C 216 0 277 48 338 91 C 355 19 363 -26 363 -43 C 363 -89 338 -128 294 -128 Z "/><path id="gIM1zLtsM" class="outline_glyph" d="M 314 228 L 543 444 L 451 444 L 286 284 L 186 444 L 95 444 L 238 229 L -6 0 L 86 0 L 266 182 L 373 0 L 465 0 Z "/></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pz0vXjCT+laYpI5JDFLfiis" data-page-width="85" data-page-height="27"><g data-tid="gz0vXjCT+laYpI5JDFLfiis" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pKEcLBpMbuQ8b+INV4mRDLQ"><g data-tid="gKEcLBpMbuQ8b+INV4mRDLQ"><path class="typst-shape" d="M 0 0 L 0 26.896 L 84.328 26.896 L 84.328 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="pw8ALFgE+vLYAe3wD4tq4PQ"><g data-tid="gw8ALFgE+vLYAe3wD4tq4PQ" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pq7lm78RAbBMVjKYiX+0ma0"><g data-tid="gq7lm78RAbBMVjKYiX+0ma0" class="typst-group"><g transform="translate(0.000,8.388)" data-tid="pJGbtwp5Ld+ov6PzJAktXnE"><g data-tid="gJGbtwp5Ld+ov6PzJAktXnE" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLjQD"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="56.50" height="62.50"><h5:div class="tsel" style="font-size: 62px">ℱ︀</h5:div></foreignObject></g></g></g><g transform="translate(22.848,8.388)" data-tid="pbiyFP2xJ2mEPYBpngeCMIU"><g data-tid="gbiyFP2xJ2mEPYBpngeCMIU" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLs0L"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="31.44" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝔤</h5:div></foreignObject></g></g></g><g transform="translate(40.884,8.388)" data-tid="pryhTGRuTOjU+bBdIb2WMb4"><g data-tid="gryhTGRuTOjU+bBdIb2WMb4" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLiAD"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="45.12" height="62.50"><h5:div class="tsel" style="font-size: 62px">ℝ</h5:div></foreignObject></g></g></g><g transform="translate(61.548,8.388)" data-tid="pCh7Oi7wOnrU5JL/qWszIKM"><g data-tid="gCh7Oi7wOnrU5JL/qWszIKM" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLtsM"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="35.31" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝘹</h5:div></foreignObject></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>

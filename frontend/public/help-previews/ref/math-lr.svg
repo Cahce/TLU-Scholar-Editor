@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 61.000 42.000" width="61.000" height="42.000" data-width="61.000" data-height="42.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"><path id="gIM1zLp0C" class="outline_glyph" d="M 264 -250 C 279 -250 287 -242 287 -226 L 287 726 C 287 742 279 750 264 750 C 249 750 241 742 241 726 L 241 -226 C 241 -242 249 -250 264 -250 Z M 134 -250 C 149 -250 157 -242 157 -226 L 157 726 C 157 742 149 750 134 750 C 119 750 111 742 111 726 L 111 -226 C 111 -242 119 -250 134 -250 Z "/><path id="gIM1zLggL" class="outline_glyph" d="M 498 144 C 498 153 493 158 482 158 C 474 158 468 151 465 137 C 445 58 421 18 394 18 C 377 18 368 32 368 60 C 368 73 372 97 381 132 L 438 357 C 443 376 445 387 445 392 C 445 412 434 422 412 422 C 391 422 377 410 370 387 C 349 424 319 442 281 442 C 216 442 159 409 109 343 C 63 281 40 217 40 150 C 40 63 91 -11 175 -11 C 218 -11 260 12 300 58 C 311 20 345 -11 392 -11 C 461 -11 482 70 498 144 Z M 341 374 C 350 353 355 339 355 330 C 355 326 354 321 353 314 L 304 122 C 301 111 294 99 285 87 C 248 41 212 18 177 18 C 138 18 118 48 118 107 C 118 131 124 167 136 215 C 157 300 187 357 224 388 C 244 405 263 413 282 413 C 309 413 329 400 341 374 Z "/><path id="gIM1zLgkL" class="outline_glyph" d="M 281 445 C 245 445 209 428 174 394 L 243 679 C 241 688 238 694 226 694 C 193 694 120 685 107 684 C 92 682 84 675 84 660 C 84 650 93 645 112 645 C 131 645 157 646 157 632 C 157 628 152 608 143 571 L 63 249 C 52 207 47 173 47 148 C 47 62 93 -11 175 -11 C 240 -11 297 22 347 89 C 392 151 415 216 415 283 C 415 370 364 445 281 445 Z M 279 415 C 318 415 337 385 337 326 C 337 299 331 263 319 218 C 297 133 268 75 233 44 C 213 27 194 19 175 19 C 134 19 114 51 114 115 C 114 137 119 170 129 214 L 151 304 C 154 319 159 330 165 338 C 204 389 242 415 279 415 Z "/><path id="gIM1zLhwL" class="outline_glyph" d="M 369 391 C 369 383 378 370 394 350 C 410 330 418 307 418 281 C 418 252 404 203 375 134 C 354 86 306 18 247 18 C 201 18 178 45 178 100 C 178 139 197 208 235 307 C 243 328 247 345 247 357 C 247 407 213 442 163 442 C 119 442 84 417 59 367 C 39 326 29 300 29 287 C 29 278 34 273 45 273 C 58 273 60 279 64 293 C 87 373 119 413 160 413 C 173 413 180 404 180 385 C 180 369 175 347 164 318 C 127 219 108 152 108 115 C 108 64 125 29 159 10 C 186 -4 214 -11 243 -11 C 332 -11 394 85 420 162 C 452 256 468 325 468 369 C 468 418 452 442 421 442 C 396 442 369 416 369 391 Z "/><path id="gIM1zLm0X" class="outline_glyph" d="M 145 -755 C 145 -771 145 -792 166 -792 C 188 -792 189 -772 189 -755 L 189 1255 C 189 1271 188 1292 167 1292 C 145 1292 145 1272 145 1255 Z "/></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pSWq7kGsvCmwYlvz0sukvx8" data-page-width="61" data-page-height="42"><g data-tid="gSWq7kGsvCmwYlvz0sukvx8" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="p+spXRAbUNVUpGPfY/xj9KA"><g data-tid="g+spXRAbUNVUpGPfY/xj9KA"><path class="typst-shape" d="M 0 0 L 0 41.008 L 60.244 41.008 L 60.244 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="pHrTmCQHiaQYIuBQve4oiG0"><g data-tid="gHrTmCQHiaQYIuBQve4oiG0" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pUu1stZmRb7YKVUQoqSth9w"><g data-tid="gUu1stZmRb7YKVUQoqSth9w" class="typst-group"><g transform="translate(0.000,15.504)" data-tid="pk6Al1MxR8VQ7DAjcY6UjHg"><g data-tid="gk6Al1MxR8VQ7DAjcY6UjHg" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLm0X"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="20.81" height="62.50"><h5:div class="tsel" style="font-size: 62px">|</h5:div></foreignObject></g></g></g><g transform="translate(5.196,7.380)" data-tid="puNgi1Vpeul08JaNgh2GirY"><g data-tid="guNgi1Vpeul08JaNgh2GirY" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLggL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="33.06" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑎</h5:div></foreignObject></g></g></g><g transform="translate(5.712,23.736)" data-tid="pwUQ8Bqd7p1o6C5sB8bhL7U"><g data-tid="gwUQ8Bqd7p1o6C5sB8bhL7U" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLgkL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="27.69" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑏</h5:div></foreignObject></g></g></g><g transform="translate(5.196,12.504)" data-tid="peY4Mkd0nJegqnKg9FDZT94"><g data-tid="geY4Mkd0nJegqnKg9FDZT94"><path class="typst-shape" d="M 0 0 L 6.348 0 " stroke-width="0.576" stroke-miterlimit="4" fill-rule="nonzero" fill="none" stroke="#000" /></g></g><g transform="translate(12.744,15.504)" data-tid="pk6Al1MxR8VQ7DAjcY6UjHg"><g data-tid="gk6Al1MxR8VQ7DAjcY6UjHg" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLm0X"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="20.81" height="62.50"><h5:div class="tsel" style="font-size: 62px">|</h5:div></foreignObject></g></g></g><g transform="translate(28.740,15.504)" data-tid="pklPJJvDV630qVieVGhXLEY"><g data-tid="gklPJJvDV630qVieVGhXLEY" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLp0C"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="24.88" height="62.50"><h5:div class="tsel" style="font-size: 62px">‖</h5:div></foreignObject></g></g></g><g transform="translate(33.516,15.504)" data-tid="ptAdFPAoi9IU1sIPxxu1NcQ"><g data-tid="gtAdFPAoi9IU1sIPxxu1NcQ" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLhwL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="31.00" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑣</h5:div></foreignObject></g></g></g><g transform="translate(39.468,15.504)" data-tid="pklPJJvDV630qVieVGhXLEY"><g data-tid="gklPJJvDV630qVieVGhXLEY" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLp0C"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="24.88" height="62.50"><h5:div class="tsel" style="font-size: 62px">‖</h5:div></foreignObject></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>

@@ -1,0 +1,97 @@
+import { Database } from "lucide-react";
+import type { ReferenceCategory } from "./types";
+
+const DOC = "https://typst.app/docs/reference/data-loading/";
+
+export const dataLoading: ReferenceCategory = {
+  slug: "data-loading",
+  title: "Nạp dữ liệu (Data Loading)",
+  icon: Database,
+  summary: "Đọc dữ liệu ngoài vào tài liệu: văn bản thô và dữ liệu có cấu trúc (CSV, JSON, YAML, XML, TOML, CBOR).",
+  docUrl: DOC,
+  fns: [
+    {
+      name: "read",
+      slug: "read",
+      kind: "function",
+      signature: "read(path, encoding)",
+      summary: "Đọc nội dung văn bản thuần hoặc dữ liệu thô từ một tệp.",
+      docUrl: `${DOC}read/`,
+      params: [
+        { name: "path", type: "str", positional: true, desc: "Đường dẫn tệp cần đọc." },
+        { name: "encoding", type: "none | str", default: '"utf8"', settable: true, desc: 'Mã hoá; none để đọc dạng bytes.' },
+      ],
+      examples: [`#let noi-dung = read("ghi-chu.txt")`],
+    },
+    {
+      name: "csv",
+      slug: "csv",
+      kind: "function",
+      signature: "csv(source, delimiter, row-type)  ·  csv.decode(bytes)",
+      summary: "Đọc dữ liệu bảng từ tệp CSV thành mảng các hàng.",
+      docUrl: `${DOC}csv/`,
+      snapshotId: "data-loading-csv",
+      params: [
+        { name: "source", type: "str | bytes", positional: true, desc: "Đường dẫn hoặc dữ liệu CSV." },
+        { name: "delimiter", type: "str", default: '","', settable: true, desc: "Ký tự ngăn cột." },
+        { name: "row-type", type: "type", default: "array", settable: true, desc: "array (theo cột) hoặc dictionary (theo tên header)." },
+      ],
+      examples: [`#let bang = csv("diem.csv")
+Số dòng: #bang.len()`],
+    },
+    {
+      name: "json",
+      slug: "json",
+      kind: "function",
+      signature: "json(source)  ·  json.decode(bytes) · json.encode(value)",
+      summary: "Đọc dữ liệu có cấu trúc từ tệp JSON.",
+      docUrl: `${DOC}json/`,
+      snapshotId: "data-loading-json",
+      params: [{ name: "source", type: "str | bytes", positional: true, desc: "Đường dẫn hoặc dữ liệu JSON." }],
+      examples: [`#let data = json("cau-hinh.json")`],
+    },
+    {
+      name: "yaml",
+      slug: "yaml",
+      kind: "function",
+      signature: "yaml(source)  ·  yaml.decode · yaml.encode",
+      summary: "Đọc dữ liệu có cấu trúc từ tệp YAML.",
+      docUrl: `${DOC}yaml/`,
+      snapshotId: "data-loading-yaml",
+      params: [{ name: "source", type: "str | bytes", positional: true, desc: "Đường dẫn hoặc dữ liệu YAML." }],
+      examples: [`#let data = yaml("meta.yaml")`],
+    },
+    {
+      name: "toml",
+      slug: "toml",
+      kind: "function",
+      signature: "toml(source)  ·  toml.decode · toml.encode",
+      summary: "Đọc dữ liệu có cấu trúc từ tệp TOML.",
+      docUrl: `${DOC}toml/`,
+      snapshotId: "data-loading-toml",
+      params: [{ name: "source", type: "str | bytes", positional: true, desc: "Đường dẫn hoặc dữ liệu TOML." }],
+      examples: [`#let cfg = toml("config.toml")`],
+    },
+    {
+      name: "xml",
+      slug: "xml",
+      kind: "function",
+      signature: "xml(source)  ·  xml.decode(bytes)",
+      summary: "Đọc dữ liệu có cấu trúc từ tệp XML (cây phần tử).",
+      docUrl: `${DOC}xml/`,
+      snapshotId: "data-loading-xml",
+      params: [{ name: "source", type: "str | bytes", positional: true, desc: "Đường dẫn hoặc dữ liệu XML." }],
+      examples: [`#let doc = xml("data.xml")`],
+    },
+    {
+      name: "cbor",
+      slug: "cbor",
+      kind: "function",
+      signature: "cbor(source)  ·  cbor.decode · cbor.encode",
+      summary: "Đọc dữ liệu có cấu trúc từ tệp CBOR (nhị phân).",
+      docUrl: `${DOC}cbor/`,
+      params: [{ name: "source", type: "str | bytes", positional: true, desc: "Đường dẫn hoặc dữ liệu CBOR." }],
+      examples: [`#let data = cbor("data.cbor")`],
+    },
+  ],
+};

@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 81.000 27.000" width="81.000" height="27.000" data-width="81.000" data-height="27.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"><path id="gIM1zLgw" class="outline_glyph" d="M 698 274 L 413 274 L 413 559 C 413 575 405 583 389 583 C 373 583 365 575 365 559 L 365 274 L 80 274 C 64 274 56 266 56 250 C 56 234 64 226 80 226 L 365 226 L 365 -59 C 365 -75 373 -83 389 -83 C 405 -83 413 -75 413 -59 L 413 226 L 698 226 C 714 226 722 234 722 250 C 722 263 711 274 698 274 Z "/><path id="gIM1zLh4" class="outline_glyph" d="M 698 367 L 80 367 C 64 367 56 359 56 344 C 56 329 64 321 80 321 L 698 321 C 714 321 722 329 722 344 C 722 356 711 367 698 367 Z M 698 179 L 80 179 C 64 179 56 171 56 156 C 56 141 64 133 80 133 L 698 133 C 714 133 722 141 722 156 C 722 169 711 179 698 179 Z "/><path id="gIM1zLggL" class="outline_glyph" d="M 498 144 C 498 153 493 158 482 158 C 474 158 468 151 465 137 C 445 58 421 18 394 18 C 377 18 368 32 368 60 C 368 73 372 97 381 132 L 438 357 C 443 376 445 387 445 392 C 445 412 434 422 412 422 C 391 422 377 410 370 387 C 349 424 319 442 281 442 C 216 442 159 409 109 343 C 63 281 40 217 40 150 C 40 63 91 -11 175 -11 C 218 -11 260 12 300 58 C 311 20 345 -11 392 -11 C 461 -11 482 70 498 144 Z M 341 374 C 350 353 355 339 355 330 C 355 326 354 321 353 314 L 304 122 C 301 111 294 99 285 87 C 248 41 212 18 177 18 C 138 18 118 48 118 107 C 118 131 124 167 136 215 C 157 300 187 357 224 388 C 244 405 263 413 282 413 C 309 413 329 400 341 374 Z "/><path id="gIM1zLgkL" class="outline_glyph" d="M 281 445 C 245 445 209 428 174 394 L 243 679 C 241 688 238 694 226 694 C 193 694 120 685 107 684 C 92 682 84 675 84 660 C 84 650 93 645 112 645 C 131 645 157 646 157 632 C 157 628 152 608 143 571 L 63 249 C 52 207 47 173 47 148 C 47 62 93 -11 175 -11 C 240 -11 297 22 347 89 C 392 151 415 216 415 283 C 415 370 364 445 281 445 Z M 279 415 C 318 415 337 385 337 326 C 337 299 331 263 319 218 C 297 133 268 75 233 44 C 213 27 194 19 175 19 C 134 19 114 51 114 115 C 114 137 119 170 129 214 L 151 304 C 154 319 159 330 165 338 C 204 389 242 415 279 415 Z "/><path id="gIM1zLgoL" class="outline_glyph" d="M 328 325 C 328 300 341 287 368 287 C 404 287 427 318 427 354 C 427 410 368 442 308 442 C 239 442 176 412 122 353 C 68 294 41 229 41 159 C 41 61 106 -11 204 -11 C 257 -11 304 2 345 27 C 379 48 404 69 420 90 C 427 99 430 106 430 109 C 430 120 425 126 414 126 C 409 126 404 122 398 114 C 365 70 324 42 277 30 C 246 22 223 18 206 18 C 149 18 121 53 121 122 C 121 184 150 274 174 317 C 198 361 249 413 308 413 C 346 413 372 402 386 381 C 355 378 328 358 328 325 Z "/><path id="gIM1zLnwS" class="outline_glyph" d="M 119 424 C 151 424 175 448 175 480 C 175 516 156 535 119 536 C 141 583 191 621 256 621 C 344 621 402 555 402 467 C 402 419 385 373 350 328 C 333 305 320 289 311 280 L 74 45 C 61 33 63 30 63 0 L 475 0 L 506 188 L 464 188 C 457 135 449 104 440 97 C 435 94 404 92 345 92 L 175 92 C 242 151 304 204 363 251 C 408 286 440 317 460 344 C 490 383 505 424 505 467 C 505 529 481 578 432 614 C 389 647 335 664 271 664 C 216 664 169 648 128 616 C 85 581 63 537 63 483 C 63 449 88 424 119 424 Z "/></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pPWwaOOFUpsYYax/dNQv1Bo" data-page-width="81" data-page-height="27"><g data-tid="gPWwaOOFUpsYYax/dNQv1Bo" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="py3MgBVhpNRMWRSVUhk9ebQ"><g data-tid="gy3MgBVhpNRMWRSVUhk9ebQ"><path class="typst-shape" d="M 0 0 L 0 26.9296 L 80.1868 26.9296 L 80.1868 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="pxEi8s460r2sMjLqoroLU4o"><g data-tid="gxEi8s460r2sMjLqoroLU4o" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pcS5tqmbmSWI4MZqjTOiDjc"><g data-tid="gcS5tqmbmSWI4MZqjTOiDjc" class="typst-group"><g transform="translate(0.000,9.934)" data-tid="puNgi1Vpeul08JaNgh2GirY"><g data-tid="guNgi1Vpeul08JaNgh2GirY" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLggL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="33.06" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑎</h5:div></foreignObject></g></g></g><g transform="translate(6.348,5.578)" data-tid="pPryZooIdT4Uo0tLtILA60Y"><g data-tid="gPryZooIdT4Uo0tLtILA60Y" class="typst-text" fill="#000" transform="scale(0.0084,-0.0084)"><use x="0" y="0" href="#gIM1zLnwS"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="35.56" height="62.50"><h5:div class="tsel" style="font-size: 62px">2</h5:div></foreignObject></g></g></g><g transform="translate(14.466,9.934)" data-tid="puQ8gdrCEha8hoRteQtiBXw"><g data-tid="guQ8gdrCEha8hoRteQtiBXw" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLgw"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="48.62" height="62.50"><h5:div class="tsel" style="font-size: 62px">+</h5:div></foreignObject></g></g></g><g transform="translate(26.469,9.934)" data-tid="pwUQ8Bqd7p1o6C5sB8bhL7U"><g data-tid="gwUQ8Bqd7p1o6C5sB8bhL7U" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLgkL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="27.69" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑏</h5:div></foreignObject></g></g></g><g transform="translate(31.785,5.578)" data-tid="pPryZooIdT4Uo0tLtILA60Y"><g data-tid="gPryZooIdT4Uo0tLtILA60Y" class="typst-text" fill="#000" transform="scale(0.0084,-0.0084)"><use x="0" y="0" href="#gIM1zLnwS"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="35.56" height="62.50"><h5:div class="tsel" style="font-size: 62px">2</h5:div></foreignObject></g></g></g><g transform="translate(40.570,9.934)" data-tid="pB2ImaNzOF4kqrDMUeNybkA"><g data-tid="gB2ImaNzOF4kqrDMUeNybkA" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLh4"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="48.62" height="62.50"><h5:div class="tsel" style="font-size: 62px">=</h5:div></foreignObject></g></g></g><g transform="translate(53.239,9.934)" data-tid="piN8ADZGuHHsrNbzimPVMXM"><g data-tid="giN8ADZGuHHsrNbzimPVMXM" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLgoL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="28.62" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑐</h5:div></foreignObject></g></g></g><g transform="translate(58.735,5.578)" data-tid="pPryZooIdT4Uo0tLtILA60Y"><g data-tid="gPryZooIdT4Uo0tLtILA60Y" class="typst-text" fill="#000" transform="scale(0.0084,-0.0084)"><use x="0" y="0" href="#gIM1zLnwS"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="35.56" height="62.50"><h5:div class="tsel" style="font-size: 62px">2</h5:div></foreignObject></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>

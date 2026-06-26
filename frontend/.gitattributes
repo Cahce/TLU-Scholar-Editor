@@ -1,0 +1,16 @@
+# Exclude generated files and dependencies from language statistics
+package-lock.json linguist-generated=true
+*.lock linguist-generated=true
+yarn.lock linguist-generated=true
+pnpm-lock.yaml linguist-generated=true
+
+# Exclude build outputs
+dist/** linguist-generated=true
+build/** linguist-generated=true
+
+# Exclude vendor/imported files
+src/app/components/ui/** linguist-vendored=true
+
+# Mark documentation as documentation
+*.md linguist-documentation=true
+guidelines/** linguist-documentation=true

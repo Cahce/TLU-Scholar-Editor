@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 320.000 24.000" width="320.000" height="24.000" data-width="320.000" data-height="24.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"><path id="gM22VLB0" class="outline_glyph" d="M 289 944 Q 335 944 367.5 911.5 Q 400 879 400 833 Q 400 787 367.5 754.5 Q 335 722 289 722 Q 243 722 210.5 754.5 Q 178 787 178 833 Q 178 879 210.5 911.5 Q 243 944 289 944 Z M 287 195 Q 334 195 366.5 162 Q 399 129 399 83 Q 399 37 366 4.5 Q 333 -28 287 -28 Q 241 -28 208.5 4.5 Q 176 37 176 83 Q 176 129 208.5 162 Q 241 195 287 195 Z "/><path id="gM22VLDc" class="outline_glyph" d="M 1185 1356 L 1200 1038 L 1162 1038 Q 1151 1122 1132 1158 Q 1101 1216 1049.5 1243.5 Q 998 1271 914 1271 L 723 1271 L 723 235 Q 723 110 750 79 Q 788 37 867 37 L 914 37 L 914 0 L 339 0 L 339 37 L 387 37 Q 473 37 509 89 Q 531 121 531 235 L 531 1271 L 368 1271 Q 273 1271 233 1257 Q 181 1238 144 1184 Q 107 1130 100 1038 L 62 1038 L 78 1356 L 1185 1356 Z "/><path id="gM22VLEY" class="outline_glyph" d="M 842 348 Q 805 167 697 69.5 Q 589 -28 458 -28 Q 302 -28 186 103 Q 70 234 70 457 Q 70 673 198.5 808 Q 327 943 507 943 Q 642 943 729 871.5 Q 816 800 816 723 Q 816 685 791.5 661.5 Q 767 638 723 638 Q 664 638 634 676 Q 617 697 611.5 756 Q 606 815 571 846 Q 536 876 474 876 Q 374 876 313 802 Q 232 704 232 543 Q 232 379 312.5 253.5 Q 393 128 530 128 Q 628 128 706 195 Q 761 241 813 362 L 842 348 Z "/><path id="gM22VLEo" class="outline_glyph" d="M 309 334 Q 225 375 180 448.5 Q 135 522 135 611 Q 135 747 237.5 845 Q 340 943 500 943 Q 631 943 727 879 L 921 879 Q 964 879 971 876.5 Q 978 874 981 868 Q 987 859 987 836 Q 987 810 982 800 Q 979 795 971.5 792 Q 964 789 921 789 L 802 789 Q 858 717 858 605 Q 858 477 760 386 Q 662 295 497 295 Q 429 295 358 315 Q 314 277 298.5 248.5 Q 283 220 283 200 Q 283 183 299.5 167 Q 316 151 364 144 Q 392 140 504 137 Q 710 132 771 123 Q 864 110 919.5 54 Q 975 -2 975 -84 Q 975 -197 869 -296 Q 713 -442 462 -442 Q 269 -442 136 -355 Q 61 -305 61 -251 Q 61 -227 72 -203 Q 89 -166 142 -100 Q 149 -91 244 8 Q 192 39 170.5 63.5 Q 149 88 149 119 Q 149 154 177.5 201 Q 206 248 309 334 Z M 483 895 Q 409 895 359 836 Q 309 777 309 655 Q 309 497 377 410 Q 429 344 509 344 Q 585 344 634 401 Q 683 458 683 580 Q 683 739 614 829 Q 563 895 483 895 Z M 299 0 Q 252 -51 228 -95 Q 204 -139 204 -176 Q 204 -224 262 -260 Q 362 -322 551 -322 Q 731 -322 816.5 -258.5 Q 902 -195 902 -123 Q 902 -71 851 -49 Q 799 -27 645 -23 Q 420 -17 299 0 Z "/><path id="gM22VLEs" class="outline_glyph" d="M 333 1422 L 333 752 Q 444 874 509 908.5 Q 574 943 639 943 Q 717 943 773 900 Q 829 857 856 765 Q 875 701 875 531 L 875 207 Q 875 120 889 88 Q 899 64 923 50 Q 947 36 1011 36 L 1011 0 L 561 0 L 561 36 L 582 36 Q 646 36 671 55.5 Q 696 75 706 113 Q 709 129 709 207 L 709 531 Q 709 681 693.5 728 Q 678 775 644 798.5 Q 610 822 562 822 Q 513 822 460 796 Q 407 770 333 691 L 333 207 Q 333 113 343.5 90 Q 354 67 382.5 51.5 Q 411 36 481 36 L 481 0 L 27 0 L 27 36 Q 88 36 123 55 Q 143 65 155 93 Q 167 121 167 207 L 167 1036 Q 167 1193 159.5 1229 Q 152 1265 136.5 1278 Q 121 1291 95 1291 Q 74 1291 27 1275 L 13 1310 L 287 1422 L 333 1422 Z "/><path id="gM22VLFU" class="outline_glyph" d="M 332 943 L 332 737 Q 447 943 568 943 Q 623 943 659 909.5 Q 695 876 695 832 Q 695 793 669 766 Q 643 739 607 739 Q 572 739 528.5 773.5 Q 485 808 464 808 Q 446 808 425 788 Q 380 747 332 653 L 332 214 Q 332 138 351 99 Q 364 72 397 54 Q 430 36 492 36 L 492 0 L 23 0 L 23 36 Q 93 36 127 58 Q 152 74 162 109 Q 167 126 167 206 L 167 561 Q 167 721 160.5 751.5 Q 154 782 136.5 796 Q 119 810 93 810 Q 62 810 23 795 L 13 831 L 290 943 L 332 943 Z "/><path id="gM22VLL8E" class="outline_glyph" d="M 218 571 Q 217 367 317 251 Q 417 135 552 135 Q 642 135 708.5 184.5 Q 775 234 820 354 L 851 334 Q 830 197 729 84.5 Q 628 -28 476 -28 Q 311 -28 193.5 100.5 Q 76 229 76 446 Q 76 681 196.5 812.5 Q 317 944 499 944 Q 653 944 752 842.5 Q 851 741 851 571 L 218 571 Z M 218 629 L 642 629 Q 637 717 621 753 Q 596 809 546.5 841 Q 497 873 443 873 Q 360 873 294.5 808.5 Q 229 744 218 629 Z M 574 1168 Q 523 1119 512 1100 Q 501 1081 499 1045 L 465 1045 Q 469 1113 515 1186 Q 547 1238 547 1270 Q 547 1344 474 1344 Q 440 1344 423 1328 Q 416 1321 416 1314 Q 416 1307 427 1289.5 Q 438 1272 438 1262 Q 438 1227 400 1227 Q 350 1227 350 1284 Q 350 1325 389.5 1352.5 Q 429 1380 489 1380 Q 567 1380 604 1341 Q 633 1311 633 1275 Q 633 1225 574 1168 Z "/><path id="gM22VLNUE" class="outline_glyph" d="M 512 943 Q 720 943 846 785 Q 953 650 953 475 Q 953 352 894 226 Q 835 100 731.5 36 Q 628 -28 501 -28 Q 294 -28 172 137 Q 69 276 69 449 Q 69 575 131.5 699.5 Q 194 824 296 883.5 Q 398 943 512 943 Z M 481 878 Q 428 878 374.5 846.5 Q 321 815 288 736 Q 255 657 255 533 Q 255 333 334.5 188 Q 414 43 544 43 Q 641 43 704 123 Q 767 203 767 398 Q 767 642 662 782 Q 591 878 481 878 Z M 431 1385 L 615 1385 L 805 1054 L 774 1054 L 501 1267 L 272 1054 L 242 1054 L 431 1385 Z M 466 1491 L 431 1491 L 537 1825 L 760 1825 L 466 1491 Z "/></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="p3ddiqg2vzykQ+uo3+rK52c" data-page-width="320" data-page-height="24"><g data-tid="g3ddiqg2vzykQ+uo3+rK52c" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="psQOV01j6O/Y3bMnZGLwa90"><g data-tid="gsQOV01j6O/Y3bMnZGLwa90"><path class="typst-shape" d="M 0 0 L 0 23.945313 L 320 23.945313 L 320 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="pYD8VV4srxUg9RE/Rl9ktZE"><g data-tid="gYD8VV4srxUg9RE/Rl9ktZE" class="typst-group"><g transform="translate(0.000,7.945)" data-tid="phsraX67evaYdU67zCRSSo0"><g data-tid="ghsraX67evaYdU67zCRSSo0" class="typst-text" fill="#000" transform="scale(0.005859375,-0.005859375)"><use x="0" y="0" href="#gM22VLDc"/><use x="1251" y="0" href="#gM22VLEs"/><use x="2275" y="0" href="#gM22VLL8E"/><use x="3184" y="0" href="#gM22VLAM"/><use x="3696" y="0" href="#gM22VLEo"/><use x="4720" y="0" href="#gM22VLNUE"/><use x="5744" y="0" href="#gM22VLEY"/><use x="6653" y="0" href="#gM22VLB0"/><use x="7222" y="0" href="#gM22VLAM"/><use x="7734" y="0" href="#gM22VLFU"/><g transform="scale(16,-16)"><foreignObject x="0" y="-88.75" width="526.00" height="128.00"><h5:div class="tsel" style="font-size: 128px">Thẻ gốc: r</h5:div></foreignObject></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>

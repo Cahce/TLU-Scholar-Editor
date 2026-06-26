@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 136.000 40.000" width="136.000" height="40.000" data-width="136.000" data-height="40.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pssdjLA6weOk2CXwIL7CArY" data-page-width="136" data-page-height="40"><g data-tid="gssdjLA6weOk2CXwIL7CArY" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="plfFvEcJr0asxcjTTYCq+20"><g data-tid="glfFvEcJr0asxcjTTYCq+20"><path class="typst-shape" d="M 0 0 L 0 40 L 136 40 L 136 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="phGDjwW80L4Aow4mFrZviFk"><g data-tid="ghGDjwW80L4Aow4mFrZviFk" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pVjlwVK7VXIMObezxsBckRo"><g data-tid="gVjlwVK7VXIMObezxsBckRo" class="typst-group"><g transform="translate(-0.000,-0.000)" data-tid="pTPPVzcgYm6I7QFRcy2Inh4"><g data-tid="gTPPVzcgYm6I7QFRcy2Inh4"><path class="typst-shape" d="M 0 0 L 0 24 L 24 24 L 24 0 Z " fill-rule="nonzero" fill="#007bff" /></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(32.000,0.000)" data-tid="pC66sWPPB8cYnbcegCQAl2Y"><g data-tid="gC66sWPPB8cYnbcegCQAl2Y" class="typst-group"><g transform="translate(-0.000,-0.000)" data-tid="psYTySDaZ2EEXs6h+c+IjaI"><g data-tid="gsYTySDaZ2EEXs6h+c+IjaI"><path class="typst-shape" d="M 0 0 L 0 24 L 24 24 L 24 0 Z " fill-rule="nonzero" fill="#ed7665" /></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(64.000,0.000)" data-tid="pllsB0comiRcmX3pdA7ykD8"><g data-tid="gllsB0comiRcmX3pdA7ykD8" class="typst-group"><g transform="translate(-0.000,-0.000)" data-tid="p/wOgMG5NNm8xH8J2kOGeC4"><g data-tid="g/wOgMG5NNm8xH8J2kOGeC4"><path class="typst-shape" d="M 0 0 L 0 24 L 24 24 L 24 0 Z " fill-rule="nonzero" fill="#999" /></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(96.000,0.000)" data-tid="p4mKc8kiPgasv6vocQrCoiE"><g data-tid="g4mKc8kiPgasv6vocQrCoiE" class="typst-group"><g transform="translate(-0.000,-0.000)" data-tid="proBcyXJVFjkvtns98/Cewk"><g data-tid="groBcyXJVFjkvtns98/Cewk"><path class="typst-shape" d="M 0 0 L 0 24 L 24 24 L 24 0 Z " fill-rule="nonzero" fill="#ff8d86" /></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></g></g></svg>

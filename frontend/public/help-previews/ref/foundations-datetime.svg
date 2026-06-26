@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 103.000 24.000" width="103.000" height="24.000" data-width="103.000" data-height="24.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"><path id="gM22VLBI" class="outline_glyph" d="M 574 1422 L 83 -28 L 3 -28 L 494 1422 L 574 1422 Z "/><path id="gM22VLBM" class="outline_glyph" d="M 74 670 Q 74 902 144 1069.5 Q 214 1237 330 1319 Q 420 1384 516 1384 Q 672 1384 796 1225 Q 951 1028 951 691 Q 951 455 883 290 Q 815 125 709.5 50.5 Q 604 -24 506 -24 Q 312 -24 183 205 Q 74 398 74 670 Z M 270 645 Q 270 365 339 188 Q 396 39 509 39 Q 563 39 621 87.5 Q 679 136 709 250 Q 755 422 755 735 Q 755 967 707 1122 Q 671 1237 614 1285 Q 573 1318 515 1318 Q 447 1318 394 1257 Q 322 1174 296 996 Q 270 818 270 645 Z "/><path id="gM22VLBU" class="outline_glyph" d="M 939 261 L 844 0 L 44 0 L 44 37 Q 397 359 541 563 Q 685 767 685 936 Q 685 1065 606 1148 Q 527 1231 417 1231 Q 317 1231 237.5 1172.5 Q 158 1114 120 1001 L 83 1001 Q 108 1186 211.5 1285 Q 315 1384 470 1384 Q 635 1384 745.5 1278 Q 856 1172 856 1028 Q 856 925 808 822 Q 734 660 568 479 Q 319 207 257 151 L 611 151 Q 719 151 762.5 159 Q 806 167 841 191.5 Q 876 216 902 261 L 939 261 Z "/><path id="gM22VLBk" class="outline_glyph" d="M 918 1384 L 918 1347 Q 786 1334 702.5 1294.5 Q 619 1255 537.5 1174 Q 456 1093 402.5 993.5 Q 349 894 313 757 Q 457 856 602 856 Q 741 856 843 744 Q 945 632 945 456 Q 945 286 842 146 Q 718 -24 514 -24 Q 375 -24 278 68 Q 88 247 88 532 Q 88 714 161 878 Q 234 1042 369.5 1169 Q 505 1296 629 1340 Q 753 1384 860 1384 L 918 1384 Z M 296 684 Q 278 549 278 466 Q 278 370 313.5 257.5 Q 349 145 419 79 Q 470 32 543 32 Q 630 32 698.5 114 Q 767 196 767 348 Q 767 519 699 644 Q 631 769 506 769 Q 468 769 424.5 753 Q 381 737 296 684 Z "/><path id="gM22VLB0" class="outline_glyph" d="M 289 944 Q 335 944 367.5 911.5 Q 400 879 400 833 Q 400 787 367.5 754.5 Q 335 722 289 722 Q 243 722 210.5 754.5 Q 178 787 178 833 Q 178 879 210.5 911.5 Q 243 944 289 944 Z M 287 195 Q 334 195 366.5 162 Q 399 129 399 83 Q 399 37 366 4.5 Q 333 -28 287 -28 Q 241 -28 208.5 4.5 Q 176 37 176 83 Q 176 129 208.5 162 Q 241 195 287 195 Z "/><path id="gM22VLDE" class="outline_glyph" d="M -27 1356 L 341 1356 L 1170 339 L 1170 1121 Q 1170 1246 1142 1277 Q 1105 1319 1025 1319 L 978 1319 L 978 1356 L 1450 1356 L 1450 1319 L 1402 1319 Q 1316 1319 1280 1267 Q 1258 1235 1258 1121 L 1258 -22 L 1222 -22 L 328 1070 L 328 235 Q 328 110 355 79 Q 393 37 472 37 L 520 37 L 520 0 L 48 0 L 48 37 L 95 37 Q 182 37 218 89 Q 240 121 240 235 L 240 1178 Q 181 1247 150.5 1269 Q 120 1291 61 1310 Q 32 1319 -27 1319 L -27 1356 Z "/><path id="gM22VLEo" class="outline_glyph" d="M 309 334 Q 225 375 180 448.5 Q 135 522 135 611 Q 135 747 237.5 845 Q 340 943 500 943 Q 631 943 727 879 L 921 879 Q 964 879 971 876.5 Q 978 874 981 868 Q 987 859 987 836 Q 987 810 982 800 Q 979 795 971.5 792 Q 964 789 921 789 L 802 789 Q 858 717 858 605 Q 858 477 760 386 Q 662 295 497 295 Q 429 295 358 315 Q 314 277 298.5 248.5 Q 283 220 283 200 Q 283 183 299.5 167 Q 316 151 364 144 Q 392 140 504 137 Q 710 132 771 123 Q 864 110 919.5 54 Q 975 -2 975 -84 Q 975 -197 869 -296 Q 713 -442 462 -442 Q 269 -442 136 -355 Q 61 -305 61 -251 Q 61 -227 72 -203 Q 89 -166 142 -100 Q 149 -91 244 8 Q 192 39 170.5 63.5 Q 149 88 149 119 Q 149 154 177.5 201 Q 206 248 309 334 Z M 483 895 Q 409 895 359 836 Q 309 777 309 655 Q 309 497 377 410 Q 429 344 509 344 Q 585 344 634 401 Q 683 458 683 580 Q 683 739 614 829 Q 563 895 483 895 Z M 299 0 Q 252 -51 228 -95 Q 204 -139 204 -176 Q 204 -224 262 -260 Q 362 -322 551 -322 Q 731 -322 816.5 -258.5 Q 902 -195 902 -123 Q 902 -71 851 -49 Q 799 -27 645 -23 Q 420 -17 299 0 Z "/><path id="gM22VLFw" class="outline_glyph" d="M 12 916 L 439 916 L 439 879 L 418 879 Q 373 879 350.5 859.5 Q 328 840 328 811 Q 328 772 361 703 L 584 241 L 789 747 Q 806 788 806 828 Q 806 846 799 855 Q 791 866 774 872.5 Q 757 879 714 879 L 714 916 L 1012 916 L 1012 879 Q 975 875 955 863 Q 935 851 911 818 Q 902 804 877 741 L 504 -173 Q 450 -306 362.5 -374 Q 275 -442 194 -442 Q 135 -442 97 -408 Q 59 -374 59 -330 Q 59 -288 86.5 -262.5 Q 114 -237 162 -237 Q 195 -237 252 -259 Q 292 -274 302 -274 Q 332 -274 367.5 -243 Q 403 -212 439 -123 L 504 36 L 175 727 Q 160 758 127 804 Q 102 839 86 851 Q 63 867 12 879 L 12 916 Z "/><path id="gM22VLGo" class="outline_glyph" d="M 583 132 Q 442 23 406 6 Q 352 -19 291 -19 Q 196 -19 134.5 46 Q 73 111 73 217 Q 73 284 103 333 Q 144 401 245.5 461 Q 347 521 583 607 L 583 643 Q 583 780 539.5 831 Q 496 882 413 882 Q 350 882 313 848 Q 275 814 275 770 L 277 712 Q 277 666 253.5 641 Q 230 616 192 616 Q 155 616 131.5 642 Q 108 668 108 713 Q 108 799 196 871 Q 284 943 443 943 Q 565 943 643 902 Q 702 871 730 805 Q 748 762 748 629 L 748 318 Q 748 187 753 157.5 Q 758 128 769.5 118 Q 781 108 796 108 Q 812 108 824 115 Q 845 128 905 188 L 905 132 Q 793 -18 691 -18 Q 642 -18 613 16 Q 584 50 583 132 Z M 583 197 L 583 546 Q 432 486 388 461 Q 309 417 275 369 Q 241 321 241 264 Q 241 192 284 144.5 Q 327 97 383 97 Q 459 97 583 197 Z M 260 1390 L 483 1390 L 589 1045 L 554 1045 L 260 1390 Z "/></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pzuxVEsPIk1InSAAI/Vqq5w" data-page-width="103" data-page-height="24"><g data-tid="gzuxVEsPIk1InSAAI/Vqq5w" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pBx6N86GnW4kL1SlbgxrQ9s"><g data-tid="gBx6N86GnW4kL1SlbgxrQ9s"><path class="typst-shape" d="M 0 0 L 0 23.945313 L 102.99414 23.945313 L 102.99414 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="pOKV7iGxa2EAng+9LDwdsSY"><g data-tid="gOKV7iGxa2EAng+9LDwdsSY" class="typst-group"><g transform="translate(0.000,7.945)" data-tid="pw73DlghcdeMK2B6be47J6o"><g data-tid="gw73DlghcdeMK2B6be47J6o" class="typst-text" fill="#000" transform="scale(0.005859375,-0.005859375)"><use x="0" y="0" href="#gM22VLDE"/><use x="1479" y="0" href="#gM22VLEo"/><use x="2503" y="0" href="#gM22VLGo"/><use x="3412" y="0" href="#gM22VLFw"/><use x="4436" y="0" href="#gM22VLB0"/><use x="5005" y="0" href="#gM22VLAM"/><use x="5517" y="0" href="#gM22VLBU"/><use x="6541" y="0" href="#gM22VLBU"/><use x="7565" y="0" href="#gM22VLBI"/><use x="8134" y="0" href="#gM22VLBM"/><use x="9158" y="0" href="#gM22VLBk"/><use x="10182" y="0" href="#gM22VLBI"/><use x="10751" y="0" href="#gM22VLBU"/><use x="11775" y="0" href="#gM22VLBM"/><use x="12799" y="0" href="#gM22VLBU"/><use x="13823" y="0" href="#gM22VLBk"/><g transform="scale(16,-16)"><foreignObject x="0" y="-88.75" width="927.94" height="128.00"><h5:div class="tsel" style="font-size: 128px">Ngày: 22/06/2026</h5:div></foreignObject></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>

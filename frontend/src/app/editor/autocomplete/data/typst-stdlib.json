@@ -1,0 +1,815 @@
+{
+  "version": "0.13.0",
+  "_note": "Hand-curated. Sync with @myriaddreamin/typst-ts-web-compiler version on upgrades. Info text in Vietnamese; English fallbacks in infoEn. CSL styles enriched with displayName/aliases/boost/section for top ~40 entries; rest kept as plain strings.",
+  "functions": [
+    {
+      "name": "bibliography",
+      "category": "model",
+      "detail": "(path, style, full, title)",
+      "info": "Hiển thị thư mục tham khảo từ file .bib hoặc .yml/.yaml.",
+      "infoEn": "Show a bibliography from a .bib or .yml/.yaml file.",
+      "returns": "content",
+      "example": "#bibliography(\"refs.bib\", style: \"ieee\", full: false)",
+      "snippet": "bibliography(\"${1:bibliography.bib}\")",
+      "params": [
+        { "name": "path", "detail": "str | array", "info": "Đường dẫn đến file thư mục tham khảo.", "infoEn": "Path to the .bib or .yml/.yaml bibliography file.", "required": true },
+        { "name": "title", "detail": "auto | none | content", "info": "Tiêu đề mục thư mục tham khảo.", "infoEn": "Title of the references section.", "required": false },
+        { "name": "full", "detail": "bool", "info": "Nếu true, hiển thị mọi entry, không chỉ entry đã trích dẫn.", "infoEn": "If true, include all entries (not only cited ones).", "required": false },
+        {
+          "name": "style",
+          "detail": "str",
+          "info": "Phong cách trích dẫn/thư mục (CSL).",
+          "infoEn": "Citation/bibliography style (CSL).",
+          "required": false,
+          "enumValues": [
+            { "value": "ieee", "displayName": "IEEE", "infoVi": "Tiêu chuẩn IEEE — phổ biến trong CNTT, Điện-Điện tử. Tương đương institute-of-electrical-and-electronics-engineers.", "boost": 99, "section": "Phổ biến" },
+            { "value": "apa", "displayName": "APA", "infoVi": "American Psychological Association — chuẩn quốc tế cho khoa học xã hội/giáo dục.", "boost": 99, "section": "Phổ biến" },
+            { "value": "mla", "displayName": "MLA", "infoVi": "Modern Language Association — chuẩn cho nhân văn/ngôn ngữ.", "boost": 99, "section": "Phổ biến" },
+            { "value": "chicago-author-date", "displayName": "Chicago (Author–Date)", "infoVi": "Chicago style dạng author-date — dùng cho lịch sử/khoa học.", "boost": 95, "section": "Phổ biến" },
+            { "value": "chicago-notes", "displayName": "Chicago (Notes & Bibliography)", "infoVi": "Chicago dạng footnotes + bibliography — dùng cho nhân văn.", "boost": 95, "section": "Phổ biến" },
+            { "value": "harvard-cite-them-right", "displayName": "Harvard", "infoVi": "Phong cách Harvard (Cite Them Right) — phổ biến ở Anh, Úc.", "boost": 90, "section": "Phổ biến" },
+            { "value": "vancouver", "displayName": "Vancouver", "infoVi": "Phong cách Vancouver — chuẩn cho y học.", "boost": 90, "section": "Phổ biến" },
+
+            { "value": "iso-690-numeric", "displayName": "ISO 690 (Numeric)", "infoVi": "ISO 690 dạng đánh số — chuẩn quốc tế ISO.", "boost": 88, "section": "Tiêu chuẩn quốc tế" },
+            { "value": "iso-690-author-date", "displayName": "ISO 690 (Author–Date)", "infoVi": "ISO 690 dạng author-date.", "boost": 88, "section": "Tiêu chuẩn quốc tế" },
+            { "value": "gb-7714-2015", "displayName": "GB/T 7714-2015", "infoVi": "Tiêu chuẩn Trung Quốc GB/T 7714-2015.", "boost": 85, "section": "Tiêu chuẩn quốc tế" },
+            { "value": "gb-7714-2015-author-date", "displayName": "GB/T 7714-2015 (Author–Date)", "infoVi": "GB/T 7714-2015 dạng author-date.", "boost": 85, "section": "Tiêu chuẩn quốc tế" },
+            { "value": "alphanumeric", "displayName": "Alphanumeric", "infoVi": "Khóa dạng [Smi24] — phối hợp chữ + số.", "boost": 80, "section": "Tiêu chuẩn quốc tế" },
+            { "value": "numeric", "displayName": "Numeric", "infoVi": "Đánh số đơn giản [1], [2], …", "boost": 70, "section": "Tiêu chuẩn quốc tế" },
+            { "value": "gost-r-705-2008-numeric", "displayName": "GOST R 7.0.5-2008", "infoVi": "Tiêu chuẩn Nga GOST R 7.0.5-2008.", "section": "Tiêu chuẩn quốc tế" },
+            { "value": "sist02", "displayName": "SIST 02", "infoVi": "Tiêu chuẩn Nhật Bản SIST 02.", "section": "Tiêu chuẩn quốc tế" },
+            { "value": "associacao-brasileira-de-normas-tecnicas", "displayName": "ABNT (Brasil)", "infoVi": "Hiệp hội Tiêu chuẩn Kỹ thuật Brazil.", "section": "Tiêu chuẩn quốc tế" },
+
+            { "value": "american-anthropological-association", "displayName": "American Anthropological Association", "infoVi": "Hiệp hội Nhân học Hoa Kỳ.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "american-political-science-association", "displayName": "American Political Science Association", "infoVi": "Hiệp hội Khoa học Chính trị Hoa Kỳ.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "american-psychological-association", "displayName": "American Psychological Association (APA — full)", "infoVi": "Bản đầy đủ của APA.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "american-sociological-association", "displayName": "American Sociological Association", "infoVi": "Hiệp hội Xã hội học Hoa Kỳ.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "modern-language-association", "displayName": "MLA (Đầy đủ)", "infoVi": "Modern Language Association — phiên bản đầy đủ.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "modern-language-association-8", "displayName": "MLA 8th edition", "infoVi": "MLA phiên bản thứ 8 (2016).", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "mla-notes", "displayName": "MLA (Notes)", "infoVi": "MLA dạng cước chú.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "chicago-fullnotes", "displayName": "Chicago (Full Notes)", "infoVi": "Chicago dạng cước chú đầy đủ cho mỗi trích dẫn.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "chicago-shortnotes", "displayName": "Chicago (Short Notes)", "infoVi": "Chicago dạng cước chú rút gọn.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "turabian-author-date", "displayName": "Turabian (Author–Date)", "infoVi": "Phong cách Turabian dạng tác giả-năm.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "turabian-fullnote-8", "displayName": "Turabian 8th (Fullnote)", "infoVi": "Turabian phiên bản 8 dạng cước chú đầy đủ.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "annual-reviews", "displayName": "Annual Reviews", "infoVi": "Chuỗi tạp chí Annual Reviews.", "section": "Hiệp hội Hoa Kỳ" },
+            { "value": "annual-reviews-author-date", "displayName": "Annual Reviews (Author–Date)", "infoVi": "Annual Reviews dạng tác giả-năm.", "section": "Hiệp hội Hoa Kỳ" },
+
+            { "value": "modern-humanities-research-association", "displayName": "MHRA", "infoVi": "Modern Humanities Research Association — chuẩn nhân văn ở Anh.", "section": "Hiệp hội Châu Âu" },
+            { "value": "bristol-university-press", "displayName": "Bristol University Press", "infoVi": "Nhà xuất bản Đại học Bristol.", "section": "Hiệp hội Châu Âu" },
+            { "value": "deutsche-gesellschaft-fur-psychologie", "displayName": "DGPs (Tâm lý học Đức)", "infoVi": "Hiệp hội Tâm lý học Đức (Deutsche Gesellschaft für Psychologie).", "section": "Hiệp hội Châu Âu" },
+            { "value": "deutsche-sprache", "displayName": "Tiếng Đức (chuẩn)", "infoVi": "Phong cách chuẩn ngôn ngữ Đức.", "section": "Hiệp hội Châu Âu" },
+
+            { "value": "american-medical-association", "displayName": "American Medical Association (AMA)", "infoVi": "Hội Y học Hoa Kỳ — phổ biến trong y khoa.", "section": "Y khoa" },
+            { "value": "american-physiological-society", "displayName": "American Physiological Society", "infoVi": "Hội Sinh lý học Hoa Kỳ.", "section": "Y khoa" },
+            { "value": "american-society-for-microbiology", "displayName": "American Society for Microbiology", "infoVi": "Hội Vi sinh vật học Hoa Kỳ.", "section": "Y khoa" },
+            { "value": "biomed-central", "displayName": "BioMed Central", "infoVi": "Nhóm tạp chí BMC — y sinh học mở.", "section": "Y khoa" },
+            { "value": "future-medicine", "displayName": "Future Medicine", "infoVi": "Nhà xuất bản tạp chí y học Future Medicine.", "section": "Y khoa" },
+            { "value": "karger", "displayName": "Karger", "infoVi": "Karger Publishers — xuất bản y khoa Thụy Sĩ.", "section": "Y khoa" },
+            { "value": "sage-vancouver", "displayName": "SAGE Vancouver", "infoVi": "Biến thể Vancouver của nhà xuất bản SAGE.", "section": "Y khoa" },
+            { "value": "thieme", "displayName": "Thieme", "infoVi": "Thieme Medical Publishers — y khoa Đức.", "section": "Y khoa" },
+            { "value": "vancouver-superscript", "displayName": "Vancouver (Superscript)", "infoVi": "Vancouver dạng đánh số chỉ số trên.", "section": "Y khoa" },
+
+            { "value": "american-chemical-society", "displayName": "American Chemical Society (ACS)", "infoVi": "Hội Hóa học Hoa Kỳ — chuẩn cho lĩnh vực hóa.", "section": "Khoa học tự nhiên" },
+            { "value": "american-geophysical-union", "displayName": "American Geophysical Union (AGU)", "infoVi": "Hội Địa vật lý Hoa Kỳ.", "section": "Khoa học tự nhiên" },
+            { "value": "american-institute-of-aeronautics-and-astronautics", "displayName": "AIAA", "infoVi": "American Institute of Aeronautics and Astronautics — hàng không, không gian.", "section": "Khoa học tự nhiên" },
+            { "value": "american-institute-of-physics", "displayName": "AIP", "infoVi": "American Institute of Physics — vật lý.", "section": "Khoa học tự nhiên" },
+            { "value": "american-meteorological-society", "displayName": "American Meteorological Society", "infoVi": "Hội Khí tượng Hoa Kỳ.", "section": "Khoa học tự nhiên" },
+            { "value": "american-physics-society", "displayName": "American Physics Society (APS)", "infoVi": "Hội Vật lý Hoa Kỳ.", "section": "Khoa học tự nhiên" },
+            { "value": "american-society-of-civil-engineers", "displayName": "ASCE", "infoVi": "American Society of Civil Engineers — kỹ thuật xây dựng.", "section": "Khoa học tự nhiên" },
+            { "value": "american-society-of-mechanical-engineers", "displayName": "ASME", "infoVi": "American Society of Mechanical Engineers — cơ khí.", "section": "Khoa học tự nhiên" },
+            { "value": "angewandte-chemie", "displayName": "Angewandte Chemie", "infoVi": "Tạp chí hóa học Đức Angewandte Chemie.", "section": "Khoa học tự nhiên" },
+            { "value": "cell", "displayName": "Cell", "infoVi": "Tạp chí Cell — sinh học phân tử.", "section": "Khoa học tự nhiên" },
+            { "value": "council-of-science-editors", "displayName": "Council of Science Editors", "infoVi": "Hiệp hội Biên tập viên Khoa học.", "section": "Khoa học tự nhiên" },
+            { "value": "council-of-science-editors-author-date", "displayName": "Council of Science Editors (Author–Date)", "infoVi": "CSE dạng tác giả-năm.", "section": "Khoa học tự nhiên" },
+            { "value": "current-opinion", "displayName": "Current Opinion", "infoVi": "Chuỗi tạp chí review Current Opinion.", "section": "Khoa học tự nhiên" },
+            { "value": "frontiers", "displayName": "Frontiers", "infoVi": "Nhà xuất bản tạp chí mở Frontiers.", "section": "Khoa học tự nhiên" },
+            { "value": "future-science", "displayName": "Future Science", "infoVi": "Nhóm tạp chí Future Science.", "section": "Khoa học tự nhiên" },
+            { "value": "institute-of-electrical-and-electronics-engineers", "displayName": "IEEE (Đầy đủ)", "infoVi": "Tên đầy đủ của IEEE.", "section": "Khoa học tự nhiên" },
+            { "value": "institute-of-physics-numeric", "displayName": "Institute of Physics (Numeric)", "infoVi": "Viện Vật lý Anh dạng đánh số.", "section": "Khoa học tự nhiên" },
+            { "value": "multidisciplinary-digital-publishing-institute", "displayName": "MDPI", "infoVi": "Multidisciplinary Digital Publishing Institute — xuất bản đa lĩnh vực.", "section": "Khoa học tự nhiên" },
+            { "value": "nature", "displayName": "Nature", "infoVi": "Tạp chí Nature — khoa học tổng hợp hàng đầu.", "section": "Khoa học tự nhiên" },
+            { "value": "pensoft", "displayName": "Pensoft", "infoVi": "Nhà xuất bản Pensoft — sinh học, đa dạng sinh học.", "section": "Khoa học tự nhiên" },
+            { "value": "plos", "displayName": "PLOS", "infoVi": "Public Library of Science — tạp chí truy cập mở.", "section": "Khoa học tự nhiên" },
+            { "value": "royal-society-of-chemistry", "displayName": "Royal Society of Chemistry (RSC)", "infoVi": "Hội Hóa học Hoàng gia Anh.", "section": "Khoa học tự nhiên" },
+            { "value": "spie", "displayName": "SPIE", "infoVi": "Hội Quang học & Photonics SPIE.", "section": "Khoa học tự nhiên" },
+            { "value": "trends", "displayName": "Trends", "infoVi": "Chuỗi tạp chí review Trends in… (Cell Press).", "section": "Khoa học tự nhiên" },
+
+            { "value": "elsevier-harvard", "displayName": "Elsevier Harvard", "infoVi": "Elsevier biến thể Harvard.", "section": "Nhà xuất bản" },
+            { "value": "elsevier-vancouver", "displayName": "Elsevier Vancouver", "infoVi": "Elsevier biến thể Vancouver.", "section": "Nhà xuất bản" },
+            { "value": "elsevier-with-titles", "displayName": "Elsevier (kèm tiêu đề)", "infoVi": "Elsevier có hiển thị tiêu đề bài báo.", "section": "Nhà xuất bản" },
+            { "value": "springer-basic", "displayName": "Springer Basic", "infoVi": "Springer dạng cơ bản.", "section": "Nhà xuất bản" },
+            { "value": "springer-basic-author-date", "displayName": "Springer Basic (Author–Date)", "infoVi": "Springer cơ bản dạng tác giả-năm.", "section": "Nhà xuất bản" },
+            { "value": "springer-fachzeitschriften-medizin-psychologie", "displayName": "Springer Y học & Tâm lý (Đức)", "infoVi": "Springer cho tạp chí y học và tâm lý Đức.", "section": "Nhà xuất bản" },
+            { "value": "springer-humanities-author-date", "displayName": "Springer Humanities (Author–Date)", "infoVi": "Springer cho nhân văn dạng tác giả-năm.", "section": "Nhà xuất bản" },
+            { "value": "springer-lecture-notes-in-computer-science", "displayName": "Springer LNCS", "infoVi": "Springer Lecture Notes in Computer Science — chuẩn cho hội nghị CNTT.", "section": "Nhà xuất bản" },
+            { "value": "springer-mathphys", "displayName": "Springer Math & Physics", "infoVi": "Springer cho toán-lý.", "section": "Nhà xuất bản" },
+            { "value": "springer-mathphys-author-date", "displayName": "Springer Math & Physics (Author–Date)", "infoVi": "Springer toán-lý dạng tác giả-năm.", "section": "Nhà xuất bản" },
+            { "value": "springer-socpsych-author-date", "displayName": "Springer Social Psychology (Author–Date)", "infoVi": "Springer tâm lý xã hội dạng tác giả-năm.", "section": "Nhà xuất bản" },
+            { "value": "springer-vancouver", "displayName": "Springer Vancouver", "infoVi": "Springer biến thể Vancouver.", "section": "Nhà xuất bản" },
+            { "value": "springer-vancouver-brackets", "displayName": "Springer Vancouver (Brackets)", "infoVi": "Springer Vancouver dạng dấu ngoặc.", "section": "Nhà xuất bản" },
+            { "value": "taylor-and-francis-chicago-author-date", "displayName": "Taylor & Francis (Chicago A-D)", "infoVi": "Taylor & Francis biến thể Chicago tác giả-năm.", "section": "Nhà xuất bản" },
+            { "value": "taylor-and-francis-national-library-of-medicine", "displayName": "Taylor & Francis (NLM)", "infoVi": "Taylor & Francis theo chuẩn NLM (thư viện y khoa).", "section": "Nhà xuất bản" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cite",
+      "category": "model",
+      "detail": "(key, supplement, form, style)",
+      "info": "Trích dẫn một entry trong thư mục tham khảo.",
+      "infoEn": "Cite a bibliography entry.",
+      "returns": "content",
+      "example": "Theo @smith2024.\n#cite(<smith2024>, supplement: [tr. 12])",
+      "snippet": "cite(<${1}>)",
+      "params": [
+        { "name": "key", "detail": "label", "info": "Khóa trích dẫn, vd `<smith2024>`.", "required": true },
+        { "name": "supplement", "detail": "none | content", "info": "Thông tin thêm sau khóa (số trang, …).", "required": false },
+        {
+          "name": "form",
+          "detail": "str | none",
+          "info": "Dạng trích dẫn: prose, normal, author, year, …",
+          "required": false,
+          "enumValues": [
+            { "value": "normal", "displayName": "Bình thường", "infoVi": "Dạng mặc định [1] hoặc (Smith 2024).", "boost": 10 },
+            { "value": "prose", "displayName": "Văn xuôi", "infoVi": "Hòa vào câu, vd \"Smith (2024) đã chứng minh…\".", "boost": 8 },
+            { "value": "full", "displayName": "Đầy đủ", "infoVi": "Phiên bản đầy đủ với tất cả tác giả.", "boost": 5 },
+            { "value": "author", "displayName": "Chỉ tác giả", "infoVi": "Chỉ tên tác giả, vd \"Smith\".", "boost": 3 },
+            { "value": "year", "displayName": "Chỉ năm", "infoVi": "Chỉ năm xuất bản, vd \"2024\".", "boost": 3 }
+          ]
+        },
+        { "name": "style", "detail": "str | none", "info": "Override phong cách thư mục.", "required": false }
+      ]
+    },
+    {
+      "name": "figure",
+      "category": "model",
+      "detail": "(body, placement, caption, kind, supplement, numbering, gap, outlined)",
+      "info": "Hình minh họa kèm chú thích.",
+      "infoEn": "A figure with an optional caption.",
+      "returns": "content",
+      "example": "#figure(\n  image(\"assets/diagram.png\", width: 60%),\n  caption: [Sơ đồ kiến trúc],\n) <fig:arch>",
+      "snippet": "figure(\n  image(\"${1:assets/image.png}\"),\n  caption: [${2:Chú thích}],\n)${}",
+      "params": [
+        { "name": "body", "detail": "content", "info": "Nội dung hình (thường là image hoặc table).", "required": true },
+        { "name": "caption", "detail": "none | content", "info": "Chú thích cho hình.", "required": false },
+        {
+          "name": "placement",
+          "detail": "none | auto | alignment",
+          "info": "Vị trí đặt hình.",
+          "required": false,
+          "enumValues": [
+            { "value": "auto", "displayName": "Tự động", "boost": 10 },
+            { "value": "top", "displayName": "Đầu trang", "boost": 8, "identifier": true },
+            { "value": "bottom", "displayName": "Cuối trang", "boost": 8, "identifier": true }
+          ]
+        },
+        {
+          "name": "kind",
+          "detail": "auto | str | function",
+          "info": "Loại hình (image/table/raw) — quyết định cách đánh số.",
+          "required": false,
+          "enumValues": [
+            { "value": "image", "displayName": "Ảnh", "boost": 10 },
+            { "value": "table", "displayName": "Bảng", "boost": 10 },
+            { "value": "raw", "displayName": "Mã (raw)", "boost": 5 }
+          ]
+        },
+        { "name": "supplement", "detail": "none | auto | content | function", "info": "Phần bổ sung counter (vd \"Hình\").", "required": false },
+        { "name": "numbering", "detail": "none | str | function", "info": "Mẫu đánh số.", "required": false },
+        { "name": "gap", "detail": "length", "info": "Khoảng cách giữa nội dung và chú thích.", "required": false },
+        { "name": "outlined", "detail": "bool", "info": "Bao gồm trong mục lục `outline` hay không.", "required": false }
+      ]
+    },
+    {
+      "name": "image",
+      "category": "visualize",
+      "detail": "(path, format, width, height, alt, fit)",
+      "info": "Hiển thị ảnh raster hoặc vector từ file.",
+      "infoEn": "Display a raster or vector image from file.",
+      "returns": "content",
+      "example": "#image(\"logo.svg\", width: 50%, alt: \"Logo trường\")",
+      "snippet": "image(\"${1:path.png}\")",
+      "params": [
+        { "name": "path", "detail": "str", "info": "Đường dẫn đến file ảnh.", "required": true },
+        {
+          "name": "format",
+          "detail": "auto | str",
+          "info": "Định dạng ảnh.",
+          "required": false,
+          "enumValues": [
+            { "value": "auto", "displayName": "Tự động", "boost": 10 },
+            { "value": "png", "displayName": "PNG", "boost": 8 },
+            { "value": "jpg", "displayName": "JPEG", "boost": 8 },
+            "jpeg",
+            { "value": "gif", "displayName": "GIF" },
+            { "value": "webp", "displayName": "WebP" },
+            { "value": "svg", "displayName": "SVG", "boost": 5 }
+          ]
+        },
+        { "name": "width", "detail": "auto | relative", "info": "Chiều rộng ảnh.", "required": false },
+        { "name": "height", "detail": "auto | relative", "info": "Chiều cao ảnh.", "required": false },
+        { "name": "alt", "detail": "none | str", "info": "Văn bản thay thế cho ảnh (accessibility).", "required": false },
+        {
+          "name": "fit",
+          "detail": "str",
+          "info": "Cách ảnh khớp với khung chứa.",
+          "required": false,
+          "enumValues": [
+            { "value": "cover", "displayName": "Phủ kín (cover)", "infoVi": "Phủ kín khung, cắt phần thừa.", "boost": 10 },
+            { "value": "contain", "displayName": "Vừa khung (contain)", "infoVi": "Vừa khung, có thể để khoảng trống.", "boost": 8 },
+            { "value": "stretch", "displayName": "Kéo giãn (stretch)", "infoVi": "Kéo giãn lấp đầy khung." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "category": "layout",
+      "detail": "(columns, rows, gutter, fill, align, stroke, ..)",
+      "info": "Bảng ô lưới.",
+      "infoEn": "Lay out cells in a tabular grid.",
+      "returns": "content",
+      "example": "#table(\n  columns: 3,\n  table.header[Tên][Tuổi][Nghề],\n  [An], [25], [Kỹ sư],\n  [Bình], [30], [Bác sĩ],\n)",
+      "snippet": "table(\n  columns: ${1:3},\n  table.header[${2:Cột 1}][${3:Cột 2}][${4:Cột 3}],\n  ${5:[Ô 1], [Ô 2], [Ô 3],}\n)${}",
+      "params": [
+        { "name": "columns", "detail": "int | array", "info": "Số cột hoặc mảng chiều rộng cột.", "required": true },
+        { "name": "rows", "detail": "int | array", "info": "Chiều cao hàng.", "required": false },
+        { "name": "gutter", "detail": "length | array", "info": "Khoảng cách giữa các ô.", "required": false },
+        { "name": "fill", "detail": "none | color | function", "info": "Màu nền ô.", "required": false },
+        { "name": "align", "detail": "auto | alignment | function", "info": "Căn lề ô.", "required": false },
+        { "name": "stroke", "detail": "none | length | color | dict", "info": "Đường viền ô.", "required": false }
+      ]
+    },
+    {
+      "name": "heading",
+      "category": "model",
+      "detail": "(level, depth, offset, numbering, supplement, outlined, bookmarked, hanging-indent, body)",
+      "info": "Tiêu đề mục.",
+      "infoEn": "A section heading.",
+      "returns": "content",
+      "example": "= Chương 1: Giới thiệu\n== Mục 1.1\n#heading(level: 3)[Tiểu mục]",
+      "snippet": "heading(level: ${1:1})[${2:Tiêu đề}]${}",
+      "params": [
+        { "name": "level", "detail": "int", "info": "Cấp tiêu đề (1 = cao nhất).", "required": false },
+        { "name": "depth", "detail": "int", "info": "Độ sâu tương đối.", "required": false },
+        { "name": "offset", "detail": "int", "info": "Lệch counter.", "required": false },
+        { "name": "numbering", "detail": "none | str | function", "info": "Mẫu đánh số.", "required": false },
+        { "name": "supplement", "detail": "none | auto | content | function", "info": "Phần bổ sung (vd \"Chương\").", "required": false },
+        { "name": "outlined", "detail": "bool", "info": "Bao gồm trong mục lục.", "required": false },
+        { "name": "bookmarked", "detail": "bool", "info": "Tạo bookmark trong PDF.", "required": false }
+      ]
+    },
+    {
+      "name": "link",
+      "category": "model",
+      "detail": "(dest, body)",
+      "info": "Tạo siêu liên kết đến URL, label hoặc vị trí.",
+      "infoEn": "Hyperlink to URL, label, or location.",
+      "returns": "content",
+      "snippet": "link(\"${1:https://example.com}\")[${2:nội dung}]${}",
+      "params": [
+        { "name": "dest", "detail": "str | label | location | dict", "info": "Đích liên kết.", "required": true },
+        { "name": "body", "detail": "content", "info": "Văn bản hiển thị.", "required": false }
+      ]
+    },
+    {
+      "name": "outline",
+      "category": "model",
+      "detail": "(title, target, depth, indent, fill)",
+      "info": "Sinh mục lục cho tài liệu.",
+      "infoEn": "Generate a table of contents.",
+      "returns": "content",
+      "snippet": "outline()",
+      "params": [
+        { "name": "title", "detail": "auto | none | content", "info": "Tiêu đề mục lục.", "required": false },
+        { "name": "target", "detail": "label | selector", "info": "Loại phần tử (mặc định: heading).", "required": false },
+        { "name": "depth", "detail": "none | int", "info": "Độ sâu heading tối đa.", "required": false },
+        { "name": "indent", "detail": "auto | bool | length | function", "info": "Thụt lề theo cấp.", "required": false },
+        { "name": "fill", "detail": "none | content", "info": "Ký tự lấp đầy giữa text và số trang.", "required": false }
+      ]
+    },
+    {
+      "name": "ref",
+      "category": "model",
+      "detail": "(target, supplement, form)",
+      "info": "Tham chiếu đến label đã định nghĩa.",
+      "infoEn": "Reference an existing label.",
+      "returns": "content",
+      "snippet": "ref(<${1}>)",
+      "params": [
+        { "name": "target", "detail": "label", "info": "Label cần tham chiếu.", "required": true },
+        { "name": "supplement", "detail": "none | auto | content | function", "info": "Ghi đè phần bổ sung.", "required": false },
+        {
+          "name": "form",
+          "detail": "str",
+          "info": "Dạng tham chiếu.",
+          "required": false,
+          "enumValues": [
+            { "value": "normal", "displayName": "Bình thường", "boost": 10 },
+            { "value": "page", "displayName": "Số trang", "boost": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "quote",
+      "category": "model",
+      "detail": "(body, block, attribution)",
+      "info": "Trích dẫn câu/đoạn.",
+      "infoEn": "A quotation.",
+      "returns": "content",
+      "snippet": "quote(attribution: [${1:nguồn}])[\n  ${2:Nội dung trích dẫn}\n]${}",
+      "params": [
+        { "name": "body", "detail": "content", "info": "Nội dung trích dẫn.", "required": true },
+        { "name": "block", "detail": "bool", "info": "Hiển thị dạng block riêng.", "required": false },
+        { "name": "attribution", "detail": "none | str | content", "info": "Nguồn của trích dẫn.", "required": false }
+      ]
+    },
+    {
+      "name": "page",
+      "category": "layout",
+      "detail": "(paper, width, height, margin, columns, header, footer, ..)",
+      "info": "Cấu hình trang giấy.",
+      "infoEn": "Configure pages.",
+      "returns": "content",
+      "example": "#set page(paper: \"a4\", margin: 2.5cm)\n#set page(numbering: \"1 / 1\")",
+      "snippet": "page(paper: \"${1:a4}\")",
+      "params": [
+        {
+          "name": "paper",
+          "detail": "str",
+          "info": "Khổ giấy.",
+          "required": false,
+          "enumValues": [
+            { "value": "a4", "displayName": "A4 (210 × 297 mm)", "infoVi": "Khổ A4 — thông dụng nhất ở Việt Nam.", "boost": 99 },
+            { "value": "a5", "displayName": "A5 (148 × 210 mm)", "boost": 90 },
+            { "value": "a3", "displayName": "A3 (297 × 420 mm)", "boost": 80 },
+            { "value": "us-letter", "displayName": "US Letter (8.5 × 11 in)", "infoVi": "Khổ thư Mỹ — chuẩn ở Hoa Kỳ.", "boost": 85 },
+            { "value": "us-legal", "displayName": "US Legal (8.5 × 14 in)", "boost": 60 },
+            { "value": "presentation-16-9", "displayName": "Trình chiếu 16:9", "infoVi": "Khổ trình chiếu widescreen.", "boost": 75 },
+            { "value": "presentation-4-3", "displayName": "Trình chiếu 4:3", "boost": 65 },
+            "a0", "a1", "a2", "a6", "a7", "a8", "a9", "a10", "a11",
+            "iso-b1", "iso-b2", "iso-b3", "iso-b4", "iso-b5", "iso-b6", "iso-b7", "iso-b8",
+            "iso-c3", "iso-c4", "iso-c5", "iso-c6", "iso-c7", "iso-c8",
+            "us-executive", "us-tabloid", "us-ledger"
+          ]
+        },
+        { "name": "width", "detail": "auto | length", "info": "Chiều rộng trang.", "required": false },
+        { "name": "height", "detail": "auto | length", "info": "Chiều cao trang.", "required": false },
+        { "name": "flipped", "detail": "bool", "info": "Lật ngang (landscape).", "required": false },
+        { "name": "margin", "detail": "auto | relative | dict", "info": "Lề trang.", "required": false },
+        { "name": "columns", "detail": "int", "info": "Số cột.", "required": false },
+        { "name": "fill", "detail": "none | color | gradient | tiling", "info": "Nền trang.", "required": false },
+        { "name": "numbering", "detail": "none | str | function", "info": "Mẫu đánh số trang.", "required": false },
+        { "name": "number-align", "detail": "alignment", "info": "Vị trí số trang.", "required": false },
+        { "name": "header", "detail": "none | auto | content | function", "info": "Tiêu đề đầu trang.", "required": false },
+        { "name": "footer", "detail": "none | auto | content | function", "info": "Chân trang.", "required": false }
+      ]
+    },
+    {
+      "name": "pagebreak",
+      "category": "layout",
+      "detail": "(weak, to)",
+      "info": "Chèn ngắt trang.",
+      "infoEn": "Insert a page break.",
+      "returns": "content",
+      "example": "#pagebreak()\n#pagebreak(weak: true)\n#pagebreak(to: \"odd\")",
+      "snippet": "pagebreak()",
+      "params": [
+        { "name": "weak", "detail": "bool", "info": "Ngắt yếu (bỏ qua nếu đã đầu trang).", "required": false },
+        {
+          "name": "to",
+          "detail": "none | str",
+          "info": "Ngắt đến trang lẻ/chẵn.",
+          "required": false,
+          "enumValues": [
+            { "value": "odd", "displayName": "Trang lẻ" },
+            { "value": "even", "displayName": "Trang chẵn" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "align",
+      "category": "layout",
+      "detail": "(alignment, body)",
+      "info": "Căn lề nội dung.",
+      "infoEn": "Align content.",
+      "returns": "content",
+      "example": "#align(center)[Tiêu đề]\n#align(right + horizon)[Nội dung]",
+      "snippet": "align(${1:center})[${2:nội dung}]${}",
+      "params": [
+        { "name": "alignment", "detail": "alignment", "info": "Hướng căn lề (left/right/center/top/bottom/horizon).", "required": true },
+        { "name": "body", "detail": "content", "info": "Nội dung cần căn.", "required": true }
+      ]
+    },
+    {
+      "name": "block",
+      "category": "layout",
+      "detail": "(body, width, height, breakable, fill, stroke, inset, outset, spacing, above, below, sticky)",
+      "info": "Hộp khối cấp block.",
+      "infoEn": "A block-level box.",
+      "returns": "content",
+      "snippet": "block[\n  ${1:nội dung}\n]${}",
+      "params": [
+        { "name": "body", "detail": "none | content", "info": "Nội dung block.", "required": false },
+        { "name": "width", "detail": "auto | relative", "info": "Chiều rộng block.", "required": false },
+        { "name": "height", "detail": "auto | relative | fraction", "info": "Chiều cao block.", "required": false },
+        { "name": "breakable", "detail": "bool", "info": "Cho phép ngắt qua trang.", "required": false },
+        { "name": "fill", "detail": "none | color | gradient | tiling", "info": "Màu nền block.", "required": false }
+      ]
+    },
+    {
+      "name": "box",
+      "category": "layout",
+      "detail": "(body, width, height, baseline, fill, stroke, inset, outset, outset, clip)",
+      "info": "Hộp inline.",
+      "infoEn": "An inline box.",
+      "returns": "content",
+      "snippet": "box[${1:nội dung}]${}",
+      "params": [
+        { "name": "body", "detail": "none | content", "info": "Nội dung hộp.", "required": false },
+        { "name": "width", "detail": "auto | relative | fraction", "info": "Chiều rộng hộp.", "required": false }
+      ]
+    },
+    {
+      "name": "grid",
+      "category": "layout",
+      "detail": "(columns, rows, gutter, ..)",
+      "info": "Bố cục lưới.",
+      "infoEn": "A grid layout.",
+      "returns": "content",
+      "example": "#grid(\n  columns: (1fr, 2fr),\n  [Trái], [Phải gấp đôi],\n)",
+      "snippet": "grid(\n  columns: ${1:2},\n  ${2:[Ô 1], [Ô 2],}\n)${}",
+      "params": [
+        { "name": "columns", "detail": "int | array | length", "info": "Cấu hình cột.", "required": true },
+        { "name": "rows", "detail": "int | array", "info": "Kích thước hàng.", "required": false },
+        { "name": "gutter", "detail": "length | array", "info": "Khoảng cách giữa ô.", "required": false }
+      ]
+    },
+    {
+      "name": "pad",
+      "category": "layout",
+      "detail": "(body, top, right, bottom, left, x, y, rest)",
+      "info": "Thêm padding quanh nội dung.",
+      "infoEn": "Add padding around content.",
+      "returns": "content",
+      "snippet": "pad(${1:1em})[${2:nội dung}]${}",
+      "params": [
+        { "name": "body", "detail": "content", "info": "Nội dung.", "required": true },
+        { "name": "rest", "detail": "relative", "info": "Padding các phía.", "required": false }
+      ]
+    },
+    {
+      "name": "columns",
+      "category": "layout",
+      "detail": "(count, gutter, body)",
+      "info": "Bố cục nhiều cột.",
+      "infoEn": "Layout content in columns.",
+      "returns": "content",
+      "snippet": "columns(${1:2})[${2:nội dung}]${}",
+      "params": [
+        { "name": "count", "detail": "int", "info": "Số cột.", "required": true },
+        { "name": "gutter", "detail": "length", "info": "Khoảng cách giữa cột.", "required": false }
+      ]
+    },
+    {
+      "name": "stack",
+      "category": "layout",
+      "detail": "(dir, spacing, ..children)",
+      "info": "Xếp nội dung theo hướng.",
+      "infoEn": "Stack content in a direction.",
+      "returns": "content",
+      "snippet": "stack(\n  dir: ${1:ttb},\n  ${2:[mục], [mục]}\n)${}",
+      "params": [
+        {
+          "name": "dir",
+          "detail": "direction",
+          "info": "Hướng xếp.",
+          "required": false,
+          "enumValues": [
+            { "value": "ttb", "displayName": "Trên xuống dưới (top→bottom)", "boost": 10, "identifier": true },
+            { "value": "btt", "displayName": "Dưới lên trên (bottom→top)", "identifier": true },
+            { "value": "ltr", "displayName": "Trái sang phải (left→right)", "boost": 8, "identifier": true },
+            { "value": "rtl", "displayName": "Phải sang trái (right→left)", "identifier": true }
+          ]
+        },
+        { "name": "spacing", "detail": "none | relative | fraction", "info": "Khoảng cách giữa các mục.", "required": false }
+      ]
+    },
+    {
+      "name": "set",
+      "category": "set-show",
+      "detail": "set <element>(...)",
+      "info": "Đặt thuộc tính mặc định cho element.",
+      "infoEn": "Set default properties for an element.",
+      "returns": "none",
+      "snippet": "set ${1:text}(${2:size: 12pt})",
+      "params": []
+    },
+    {
+      "name": "show",
+      "category": "set-show",
+      "detail": "show <selector>: <transformer>",
+      "info": "Áp dụng show rule.",
+      "infoEn": "Apply a show rule.",
+      "returns": "none",
+      "snippet": "show ${1:heading}: ${2:it => emph(it.body)}",
+      "params": []
+    },
+    {
+      "name": "text",
+      "category": "text",
+      "detail": "(body, font, size, weight, style, ..)",
+      "info": "Định dạng văn bản.",
+      "infoEn": "Style text.",
+      "returns": "content",
+      "snippet": "text(${1:size: 12pt})[${2:nội dung}]${}",
+      "params": [
+        { "name": "body", "detail": "content", "info": "Nội dung.", "required": true },
+        { "name": "font", "detail": "str | array", "info": "Họ font chữ.", "required": false },
+        { "name": "size", "detail": "length", "info": "Cỡ chữ.", "required": false },
+        {
+          "name": "weight",
+          "detail": "int | str",
+          "info": "Độ đậm chữ.",
+          "required": false,
+          "enumValues": [
+            { "value": "regular", "displayName": "Regular (400)", "infoVi": "Độ đậm thường.", "boost": 99 },
+            { "value": "bold", "displayName": "Bold (700)", "infoVi": "Đậm.", "boost": 90 },
+            { "value": "medium", "displayName": "Medium (500)", "boost": 80 },
+            { "value": "semibold", "displayName": "Semibold (600)", "boost": 80 },
+            { "value": "light", "displayName": "Light (300)", "boost": 70 },
+            { "value": "thin", "displayName": "Thin (100)" },
+            { "value": "extralight", "displayName": "Extralight (200)" },
+            { "value": "extrabold", "displayName": "Extrabold (800)" },
+            { "value": "black", "displayName": "Black (900)" }
+          ]
+        },
+        {
+          "name": "style",
+          "detail": "str",
+          "info": "Kiểu chữ.",
+          "required": false,
+          "enumValues": [
+            { "value": "normal", "displayName": "Bình thường", "boost": 99 },
+            { "value": "italic", "displayName": "Nghiêng", "boost": 90 },
+            { "value": "oblique", "displayName": "Xiên (oblique)", "boost": 50 }
+          ]
+        },
+        { "name": "fill", "detail": "color | gradient | tiling", "info": "Màu chữ.", "required": false },
+        { "name": "lang", "detail": "str", "info": "Mã ngôn ngữ (vd \"vi\", \"en\").", "required": false }
+      ]
+    },
+    {
+      "name": "emph",
+      "category": "text",
+      "detail": "(body)",
+      "info": "Nhấn mạnh (in nghiêng).",
+      "infoEn": "Emphasize text.",
+      "returns": "content",
+      "snippet": "emph[${1:nội dung}]${}",
+      "params": [{ "name": "body", "detail": "content", "info": "Nội dung.", "required": true }]
+    },
+    {
+      "name": "strong",
+      "category": "text",
+      "detail": "(body, delta)",
+      "info": "Văn bản đậm (in đậm).",
+      "infoEn": "Strong (bold) text.",
+      "returns": "content",
+      "snippet": "strong[${1:nội dung}]${}",
+      "params": [
+        { "name": "body", "detail": "content", "info": "Nội dung.", "required": true },
+        { "name": "delta", "detail": "int", "info": "Mức tăng độ đậm.", "required": false }
+      ]
+    },
+    {
+      "name": "underline",
+      "category": "text",
+      "detail": "(body, stroke, offset, extent, evade)",
+      "info": "Gạch chân văn bản.",
+      "infoEn": "Underline text.",
+      "returns": "content",
+      "snippet": "underline[${1:nội dung}]${}",
+      "params": [{ "name": "body", "detail": "content", "info": "Nội dung.", "required": true }]
+    },
+    {
+      "name": "strike",
+      "category": "text",
+      "detail": "(body, stroke, offset, extent)",
+      "info": "Gạch ngang văn bản.",
+      "infoEn": "Strikethrough text.",
+      "returns": "content",
+      "snippet": "strike[${1:nội dung}]${}",
+      "params": [{ "name": "body", "detail": "content", "info": "Nội dung.", "required": true }]
+    },
+    {
+      "name": "raw",
+      "category": "text",
+      "detail": "(text, block, lang, align, syntaxes, theme, tab-size)",
+      "info": "Hiển thị mã (raw/code).",
+      "infoEn": "Show a raw (code) snippet.",
+      "returns": "content",
+      "snippet": "raw(\"${1:code}\", lang: \"${2:rust}\")",
+      "params": [
+        { "name": "text", "detail": "str", "info": "Nội dung raw.", "required": true },
+        { "name": "block", "detail": "bool", "info": "Hiển thị dạng block.", "required": false },
+        { "name": "lang", "detail": "none | str", "info": "Ngôn ngữ để highlight.", "required": false }
+      ]
+    },
+    {
+      "name": "linebreak",
+      "category": "text",
+      "detail": "(justify)",
+      "info": "Ngắt dòng.",
+      "infoEn": "Insert a line break.",
+      "returns": "content",
+      "snippet": "linebreak()",
+      "params": [{ "name": "justify", "detail": "bool", "info": "Justify trước ngắt.", "required": false }]
+    },
+    {
+      "name": "parbreak",
+      "category": "text",
+      "detail": "()",
+      "info": "Ngắt đoạn.",
+      "infoEn": "Insert a paragraph break.",
+      "returns": "content",
+      "snippet": "parbreak()",
+      "params": []
+    },
+    {
+      "name": "smartquote",
+      "category": "text",
+      "detail": "(double, enabled)",
+      "info": "Dấu nháy thông minh (typographic).",
+      "infoEn": "Smart (typographic) quote.",
+      "returns": "content",
+      "snippet": "smartquote()",
+      "params": []
+    },
+    {
+      "name": "lorem",
+      "category": "text",
+      "detail": "(words)",
+      "info": "Sinh văn bản lorem ipsum.",
+      "infoEn": "Generate lorem ipsum text.",
+      "returns": "str",
+      "snippet": "lorem(${1:50})",
+      "params": [
+        { "name": "words", "detail": "int", "info": "Số từ cần sinh.", "required": true }
+      ]
+    },
+    {
+      "name": "rect",
+      "category": "visualize",
+      "detail": "(body, width, height, fill, stroke, radius, inset)",
+      "info": "Vẽ hình chữ nhật.",
+      "infoEn": "Draw a rectangle.",
+      "returns": "content",
+      "snippet": "rect(width: ${1:5cm}, height: ${2:3cm})",
+      "params": [
+        { "name": "width", "detail": "auto | relative", "info": "Chiều rộng.", "required": false },
+        { "name": "height", "detail": "auto | relative", "info": "Chiều cao.", "required": false },
+        { "name": "fill", "detail": "none | color | gradient | tiling", "info": "Màu nền.", "required": false },
+        { "name": "stroke", "detail": "none | length | color | dict", "info": "Viền.", "required": false }
+      ]
+    },
+    {
+      "name": "circle",
+      "category": "visualize",
+      "detail": "(body, radius, width, height, fill, stroke)",
+      "info": "Vẽ hình tròn.",
+      "infoEn": "Draw a circle.",
+      "returns": "content",
+      "snippet": "circle(radius: ${1:3cm})",
+      "params": [{ "name": "radius", "detail": "auto | length", "info": "Bán kính.", "required": false }]
+    },
+    {
+      "name": "ellipse",
+      "category": "visualize",
+      "detail": "(body, width, height, fill, stroke)",
+      "info": "Vẽ hình elip.",
+      "infoEn": "Draw an ellipse.",
+      "returns": "content",
+      "snippet": "ellipse(width: ${1:5cm}, height: ${2:3cm})",
+      "params": []
+    },
+    {
+      "name": "line",
+      "category": "visualize",
+      "detail": "(start, end, length, angle, stroke)",
+      "info": "Vẽ đường thẳng.",
+      "infoEn": "Draw a line.",
+      "returns": "content",
+      "snippet": "line(length: ${1:5cm})",
+      "params": []
+    },
+    {
+      "name": "include",
+      "category": "file-ops",
+      "detail": "include <path>",
+      "info": "Chèn nội dung file Typst khác.",
+      "infoEn": "Include the result of a Typst file inline.",
+      "returns": "content",
+      "snippet": "include \"${1:path.typ}\"",
+      "params": []
+    },
+    {
+      "name": "import",
+      "category": "file-ops",
+      "detail": "import <path>: ..",
+      "info": "Import binding từ file Typst.",
+      "infoEn": "Import bindings from a Typst file.",
+      "returns": "none",
+      "snippet": "import \"${1:path.typ}\": ${2:*}",
+      "params": []
+    },
+    {
+      "name": "read",
+      "category": "file-ops",
+      "detail": "(path, encoding)",
+      "info": "Đọc nội dung file dạng text/bytes.",
+      "infoEn": "Read a file's contents as text/bytes.",
+      "returns": "str | bytes",
+      "snippet": "read(\"${1:path}\")",
+      "params": [
+        { "name": "path", "detail": "str", "info": "Đường dẫn file.", "required": true },
+        {
+          "name": "encoding",
+          "detail": "none | str",
+          "info": "Encoding văn bản.",
+          "required": false,
+          "enumValues": [
+            { "value": "utf8", "displayName": "UTF-8", "boost": 10 },
+            "utf-8"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "csv",
+      "category": "file-ops",
+      "detail": "(path, delimiter, row-type)",
+      "info": "Đọc file CSV.",
+      "infoEn": "Read a CSV file.",
+      "returns": "array",
+      "snippet": "csv(\"${1:data.csv}\")",
+      "params": [
+        { "name": "path", "detail": "str | bytes", "info": "Đường dẫn file CSV.", "required": true },
+        { "name": "delimiter", "detail": "str", "info": "Ký tự phân tách trường.", "required": false }
+      ]
+    },
+    {
+      "name": "json",
+      "category": "file-ops",
+      "detail": "(path)",
+      "info": "Đọc file JSON.",
+      "infoEn": "Read a JSON file.",
+      "returns": "dict | array | str | int | float | bool | none",
+      "snippet": "json(\"${1:data.json}\")",
+      "params": [{ "name": "path", "detail": "str | bytes", "info": "Đường dẫn file JSON.", "required": true }]
+    },
+    {
+      "name": "yaml",
+      "category": "file-ops",
+      "detail": "(path)",
+      "info": "Đọc file YAML.",
+      "infoEn": "Read a YAML file.",
+      "returns": "dict | array | str | int | float | bool | none",
+      "snippet": "yaml(\"${1:data.yml}\")",
+      "params": [{ "name": "path", "detail": "str | bytes", "info": "Đường dẫn file YAML.", "required": true }]
+    },
+    {
+      "name": "toml",
+      "category": "file-ops",
+      "detail": "(path)",
+      "info": "Đọc file TOML.",
+      "infoEn": "Read a TOML file.",
+      "returns": "dict | array | str | int | float | bool | none",
+      "snippet": "toml(\"${1:data.toml}\")",
+      "params": [{ "name": "path", "detail": "str | bytes", "info": "Đường dẫn file TOML.", "required": true }]
+    }
+  ],
+  "types": [
+    { "name": "alignment", "info": "Hướng căn lề: left, right, center, top, bottom, horizon.", "infoEn": "Alignment specifier: left, right, center, top, bottom, horizon." },
+    { "name": "color", "info": "Màu sắc: red, blue, #FF0000, rgb(255, 0, 0).", "infoEn": "Color value: e.g. red, #FF0000, rgb(255, 0, 0)." },
+    { "name": "content", "info": "Kiểu nội dung markup.", "infoEn": "Markup content type." },
+    { "name": "length", "info": "Độ dài có đơn vị: 1em, 12pt, 1.5cm.", "infoEn": "Length with unit." },
+    { "name": "ratio", "info": "Phần trăm: 50%.", "infoEn": "Percentage." },
+    { "name": "relative", "info": "Length hoặc ratio.", "infoEn": "Length or ratio." },
+    { "name": "fraction", "info": "Đơn vị chia phần: 1fr.", "infoEn": "Fractional unit." },
+    { "name": "label", "info": "Label dạng <intro>.", "infoEn": "Label like <intro>." },
+    { "name": "selector", "info": "Bộ chọn element.", "infoEn": "Element selector." },
+    { "name": "function", "info": "Giá trị hàm.", "infoEn": "A function value." },
+    { "name": "int", "info": "Số nguyên.", "infoEn": "Integer number." },
+    { "name": "float", "info": "Số thực dấu phẩy động.", "infoEn": "Floating-point number." },
+    { "name": "str", "info": "Chuỗi ký tự.", "infoEn": "String value." },
+    { "name": "bool", "info": "true hoặc false.", "infoEn": "true or false." },
+    { "name": "array", "info": "Mảng các giá trị.", "infoEn": "Array of values." },
+    { "name": "dict", "info": "Từ điển khóa-giá trị.", "infoEn": "Dictionary." },
+    { "name": "none", "info": "Không có giá trị.", "infoEn": "Absence of value." },
+    { "name": "auto", "info": "Cờ tự động chọn.", "infoEn": "Auto-select sentinel." }
+  ]
+}

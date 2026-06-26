@@ -1,0 +1,599 @@
+.cm-typst-visual-mode .cm-content {
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+}
+
+.cm-typst-visual-mode .cm-line {
+  line-height: 1.6;
+}
+
+/* Heading hierarchy. Applied via Decoration.line on the line containing the
+ * Heading node. The HeadingMarker is collapsed by Decoration.replace so the
+ * raw `=` chars don't show up in visual mode. */
+.cm-typst-heading-1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0.6em 0 0.3em;
+  line-height: 1.3;
+}
+.cm-typst-heading-2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0.5em 0 0.25em;
+  line-height: 1.3;
+}
+.cm-typst-heading-3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 0.4em 0 0.2em;
+  line-height: 1.35;
+}
+.cm-typst-heading-4,
+.cm-typst-heading-5,
+.cm-typst-heading-6 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0.3em 0 0.15em;
+}
+
+/* Inline marks. Applied via Decoration.mark so the cursor can enter the
+ * range and edit individual characters; the raw `*`, `_`, `` ` `` chars
+ * remain visible (KISS — mode is meant to suggest the formatting, not hide
+ * the syntax). */
+.cm-typst-strong {
+  font-weight: 600;
+}
+.cm-typst-emph {
+  font-style: italic;
+}
+.cm-typst-raw-inline {
+  font-family: var(--font-mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+  background: rgb(241 245 249);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+/* List / enum / term markers. The actual `-` / `+` / `/` chars are hidden
+ * via Decoration.replace and rendered as bullet / number / arrow widgets. */
+.cm-typst-list-bullet {
+  display: inline-block;
+  width: 1.25em;
+  color: rgb(100 116 139);
+  font-weight: 600;
+}
+
+.cm-typst-enum-number {
+  display: inline-block;
+  min-width: 1.5em;
+  padding-right: 0.25em;
+  color: rgb(100 116 139);
+  font-variant-numeric: tabular-nums;
+}
+
+.cm-typst-list-item,
+.cm-typst-enum-item,
+.cm-typst-term-item {
+  padding-left: 0.25em;
+}
+
+/* Multi-line code block widget. Replaces the raw ```lang ... ``` fence. */
+.cm-typst-code-block {
+  font-family: var(--font-mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+  background: rgb(241 245 249);
+  color: rgb(15 23 42);
+  padding: 0.75em 1em;
+  margin: 1em 0 0.75em;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+/* When a block widget is the very first element rendered in the editor
+ * line, drop the top margin so it sits flush with content above. */
+.cm-typst-visual-mode .cm-line:first-child .cm-typst-code-block,
+.cm-typst-visual-mode .cm-line:first-child .cm-typst-figure,
+.cm-typst-visual-mode .cm-line:first-child .cm-typst-image-wrapper,
+.cm-typst-visual-mode .cm-line:first-child .cm-typst-table-wrapper {
+  margin-top: 0;
+}
+
+.cm-typst-code-block code {
+  font-family: inherit;
+  background: none;
+  padding: 0;
+}
+
+/* Math (Typst-compiled SVG via TypstMathRenderer). Inline math sits within
+ * text flow; block math is centered with its own vertical breathing room. */
+.cm-typst-math {
+  cursor: pointer;
+}
+.cm-typst-math-inline {
+  display: inline-block;
+  padding: 0 0.15em;
+  vertical-align: middle;
+}
+/* Normalize inline math to the editor font. The Typst renderer emits SVGs at a
+ * fixed pt size (14pt), so without this the preview ignored the editor's font
+ * size and looked inconsistent next to the larger block/display math. Pinning
+ * the height in `em` ties it to the surrounding text; `width: auto` preserves
+ * the aspect ratio via the SVG viewBox. */
+.cm-typst-math-inline .cm-typst-math-render svg {
+  height: 1.3em;
+  width: auto;
+  vertical-align: middle;
+}
+.cm-typst-math-block {
+  display: block;
+  text-align: center;
+  margin: 0.5em 0;
+}
+/* The math is rendered as a Typst SVG, which is a block-level element —
+ * `text-align: center` on the wrapper doesn't move it, so center the SVG
+ * explicitly with flex. (Inline math keeps its default inline flow.) */
+.cm-typst-math-block .cm-typst-math-render {
+  display: flex;
+  justify-content: center;
+}
+/* Display math is intentionally larger than inline. Keep its height `auto` so
+ * multi-line equations (matrices, stacked fractions) size to their content
+ * instead of being squished, but cap it so a tall matrix can't dominate the
+ * editor. `max-width: 100%` keeps wide equations from overflowing. */
+.cm-typst-math-block .cm-typst-math-render svg {
+  display: block;
+  height: auto;
+  max-height: 7em;
+  max-width: 100%;
+}
+.cm-typst-math-error {
+  color: rgb(220 38 38);
+  text-decoration: underline wavy rgb(220 38 38);
+  font-family: var(--font-mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+}
+
+/* Chemistry (#ce via whalogen) — inline, rendered as native Typst SVG. */
+.cm-typst-chem {
+  display: inline-block;
+  padding: 0 0.15em;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.cm-typst-chem svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cm-typst-chem-error {
+  color: rgb(220 38 38);
+  text-decoration: underline wavy rgb(220 38 38);
+  font-family: var(--font-mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+}
+.cm-typst-math:focus-visible {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Function-call widgets (image / figure / table / quote). */
+.cm-typst-funccall-fallback {
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  margin: 0.4em 0;
+  border: 1px dashed rgb(148 163 184);
+  border-radius: 6px;
+  color: rgb(100 116 139);
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* Image / figure widgets are centred horizontally to match Overleaf's
+ * visual layout for `\begin{figure}\centering ...`. We use flex column
+ * centering on the WRAPPER (which CodeMirror inserts inline) so the
+ * inner image floats centred regardless of its intrinsic width. */
+.cm-typst-image-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1em 0 0.75em;
+  padding: 0.5em;
+  border-radius: 6px;
+  background: rgb(248 250 252);
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+.cm-typst-image-wrapper:hover {
+  background: rgb(241 245 249);
+}
+.cm-typst-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+
+.cm-typst-figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1em 0 0.75em;
+  padding: 0.5em;
+  border-radius: 6px;
+  background: rgb(248 250 252);
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+.cm-typst-figure:hover {
+  background: rgb(241 245 249);
+}
+
+/* Pencil edit button overlay shown on figure / image / table / math widgets.
+ * Light style (white circle + dark pencil) and ALWAYS visible at reduced
+ * opacity — the old hover-only dark circle was invisible against images and
+ * users couldn't find the edit affordance at all. */
+.cm-typst-edit-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgb(203 213 225);
+  border-radius: 50%;
+  background: rgb(255 255 255);
+  color: rgb(51 65 85);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
+  opacity: 0.85;
+  transition: opacity 0.15s ease-in-out, background 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  z-index: 2;
+}
+.cm-typst-figure:hover .cm-typst-edit-button,
+.cm-typst-image-wrapper:hover .cm-typst-edit-button,
+.cm-typst-table-wrapper:hover .cm-typst-edit-button,
+.cm-typst-math:hover .cm-typst-edit-button,
+.cm-typst-edit-button:hover,
+.cm-typst-edit-button:focus-visible {
+  opacity: 1;
+  background: rgb(241 245 249);
+  border-color: rgb(148 163 184);
+}
+
+/* Drag-to-resize handle (bottom-right corner grip) for image/figure widgets
+ * — spec visual-editor-overleaf Phase 4 / R4 AC3. */
+.cm-typst-resize-handle {
+  position: absolute;
+  right: 0.4em;
+  bottom: 0.4em;
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid rgb(30 41 59);
+  border-bottom: 3px solid rgb(30 41 59);
+  border-bottom-right-radius: 3px;
+  cursor: nwse-resize;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 2;
+}
+.cm-typst-figure:hover .cm-typst-resize-handle,
+.cm-typst-image-wrapper:hover .cm-typst-resize-handle,
+.cm-typst-resize-handle:focus-visible {
+  opacity: 1;
+}
+.cm-typst-resize-handle:focus-visible {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+}
+
+/* "Mở nguồn" pill on complex (read-only) table widgets — same reveal
+ * behaviour as the pencil but labeled, because there's no dialog to offer. */
+.cm-typst-open-source-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 999px;
+  background: rgb(30 41 59);
+  color: rgb(255 255 255);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 2;
+}
+.cm-typst-table-wrapper:hover .cm-typst-open-source-button,
+.cm-typst-open-source-button:focus-visible {
+  opacity: 1;
+}
+.cm-typst-open-source-button:hover {
+  background: rgb(15 23 42);
+}
+.cm-typst-open-source-button:focus-visible {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+}
+.cm-typst-edit-button:focus-visible {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+}
+.cm-typst-figure-caption {
+  display: block;
+  margin-top: 0.75em;
+  max-width: 90%;
+  font-style: italic;
+  font-size: 0.85em;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  color: rgb(51 65 85);
+  text-align: center;
+}
+
+.cm-typst-table-wrapper {
+  margin: 1em 0 0.75em;
+  overflow-x: auto;
+}
+.cm-typst-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.cm-typst-table thead th {
+  font-weight: 600;
+  background: rgb(241 245 249);
+  border-bottom: 2px solid rgb(203 213 225);
+  text-align: left;
+}
+.cm-typst-table td,
+.cm-typst-table th {
+  border: 1px solid rgb(203 213 225);
+  padding: 0.35em 0.7em;
+  text-align: left;
+}
+
+.cm-typst-quote {
+  margin: 0.6em 0 0.6em 0.5em;
+  padding-left: 1em;
+  border-left: 3px solid rgb(148 163 184);
+  font-style: italic;
+  color: rgb(51 65 85);
+}
+.cm-typst-quote-cite {
+  display: block;
+  margin-top: 0.3em;
+  font-size: 0.85em;
+  color: rgb(100 116 139);
+  font-style: normal;
+}
+
+/* Citations + labels. */
+.cm-typst-citation {
+  color: rgb(37 99 235);
+  text-decoration: underline dotted;
+  cursor: pointer;
+}
+.cm-typst-citation:hover,
+.cm-typst-citation:focus-visible {
+  color: rgb(29 78 216);
+  text-decoration-style: solid;
+  outline: none;
+}
+
+.cm-typst-label {
+  display: inline-block;
+  margin-left: 0.15em;
+  padding: 0 0.4em;
+  border-radius: 10px;
+  background: rgb(241 245 249);
+  color: rgb(100 116 139);
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 1.4;
+}
+
+/* ────────────────────────────────────────────────────────────────────────
+ * Overleaf-style "editable environment" boxes
+ * (spec: .kiro/specs/visual-editor-overleaf — Phase 1 / R0)
+ *
+ * Every block widget reads as a clearly bounded, clickable cell: a subtle
+ * border that DARKENS on hover/focus (like Overleaf's visual editor wrapping
+ * a table/figure in a box) plus a small type label in the top-left corner.
+ * Pure presentation — the underlying click-to-source / edit-button behaviour
+ * is unchanged. The interactive grid editor lives in Phase 2 (R2).
+ * ──────────────────────────────────────────────────────────────────────── */
+.cm-typst-table-wrapper,
+.cm-typst-figure,
+.cm-typst-image-wrapper,
+.cm-typst-code-block,
+.cm-typst-quote,
+.cm-typst-math-block {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+/* Tables had no box before — give it inner breathing room so the new border
+ * doesn't hug the grid, bringing it to parity with figure/image. */
+.cm-typst-table-wrapper {
+  padding: 0.55em 0.55em 0.6em;
+}
+.cm-typst-math-block {
+  padding: 0.35em 0.6em;
+}
+
+.cm-typst-table-wrapper:hover,
+.cm-typst-figure:hover,
+.cm-typst-image-wrapper:hover,
+.cm-typst-code-block:hover,
+.cm-typst-quote:hover,
+.cm-typst-math-block:hover,
+.cm-typst-table-wrapper:focus-within,
+.cm-typst-figure:focus-within,
+.cm-typst-image-wrapper:focus-within,
+.cm-typst-code-block:focus-within,
+.cm-typst-quote:focus-within,
+.cm-typst-math-block:focus-within {
+  border-color: rgb(148 163 184); /* slate-400 — "đậm hơn" khi hover */
+  box-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
+}
+
+/* Type label (góc trên-trái), chỉ hiện khi hover/focus — kiểu Overleaf. */
+.cm-typst-table-wrapper::before,
+.cm-typst-figure::before,
+.cm-typst-image-wrapper::before,
+.cm-typst-code-block::before,
+.cm-typst-quote::before,
+.cm-typst-math-block::before {
+  position: absolute;
+  top: 0.2em;
+  left: 0.5em;
+  padding: 0 0.45em;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  font-size: 0.68em;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgb(71 85 105);
+  background: rgb(255 255 255 / 0.92);
+  border: 1px solid rgb(203 213 225);
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 1;
+}
+.cm-typst-table-wrapper:hover::before,
+.cm-typst-table-wrapper:focus-within::before,
+.cm-typst-figure:hover::before,
+.cm-typst-figure:focus-within::before,
+.cm-typst-image-wrapper:hover::before,
+.cm-typst-image-wrapper:focus-within::before,
+.cm-typst-code-block:hover::before,
+.cm-typst-code-block:focus-within::before,
+.cm-typst-quote:hover::before,
+.cm-typst-quote:focus-within::before,
+.cm-typst-math-block:hover::before,
+.cm-typst-math-block:focus-within::before {
+  opacity: 1;
+}
+.cm-typst-table-wrapper::before {
+  content: "Bảng";
+}
+.cm-typst-figure::before {
+  content: "Hình";
+}
+.cm-typst-image-wrapper::before {
+  content: "Hình ảnh";
+}
+.cm-typst-code-block::before {
+  content: "Mã";
+}
+.cm-typst-quote::before {
+  content: "Trích dẫn";
+}
+.cm-typst-math-block::before {
+  content: "Công thức";
+}
+
+/* ────────────────────────────────────────────────────────────────────────
+ * Smart chips for citations (@key) and labels (<name>)
+ * (spec: visual-editor-overleaf — Phase 3 / R3.1, R3.2)
+ * Inline pill + icon so refs read as interactive tokens, not prose.
+ * ──────────────────────────────────────────────────────────────────────── */
+.cm-typst-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0.05em 0.5em;
+  margin: 0 0.1em;
+  border-radius: 999px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+.cm-typst-chip svg {
+  flex: none;
+}
+.cm-typst-chip .cm-typst-chip-text {
+  font-weight: 500;
+}
+
+.cm-typst-cite-chip {
+  background: rgb(219 234 254);
+  color: rgb(29 78 216);
+}
+.cm-typst-cite-chip:hover,
+.cm-typst-cite-chip:focus-visible {
+  background: rgb(191 219 254);
+  border-color: rgb(96 165 250);
+  outline: none;
+}
+
+.cm-typst-label-chip {
+  background: rgb(220 252 231);
+  color: rgb(21 128 61);
+}
+.cm-typst-label-chip:hover,
+.cm-typst-label-chip:focus-visible {
+  background: rgb(187 247 208);
+  border-color: rgb(74 222 128);
+  outline: none;
+}
+
+/* `#link("url")[label]` chip (spec: visual-editor-aux-polish — US-5).
+ * Visually distinct from the citation chip: underlined link-blue text on a
+ * neutral pill, external-link icon. */
+.cm-typst-link-chip {
+  background: rgb(241 245 249);
+  color: rgb(0 105 217);
+}
+.cm-typst-link-chip .cm-typst-chip-text {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cm-typst-link-chip:hover,
+.cm-typst-link-chip:focus-visible {
+  background: rgb(226 232 240);
+  border-color: rgb(147 197 253);
+  outline: none;
+}
+
+/* Bare autolink (https://…) — mark decoration, text stays editable.
+ * Ctrl/Cmd+click opens it (linkClickExtension). */
+.cm-typst-visual-mode .cm-typst-link {
+  color: rgb(0 105 217);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgb(147 197 253);
+}
+
+/* ────────────────────────────────────────────────────────────────────────
+ * Raw script / code lines (spec: visual-editor-overleaf — Phase 5 / R5)
+ * Typst logic (`#let`/`#set`/`#show`/`#import`/`#{ … }`/custom calls) is left
+ * as raw editable source but painted as a monospace code block so it reads as
+ * "frozen script", not prose. Line-level only — text stays editable.
+ * ──────────────────────────────────────────────────────────────────────── */
+.cm-typst-visual-mode .cm-line.cm-typst-raw-script-line {
+  font-family: var(--font-mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+  font-size: 0.92em;
+  background: rgb(248 250 252);
+  box-shadow: inset 3px 0 0 rgb(148 163 184);
+  padding-left: 0.6em;
+}

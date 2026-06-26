@@ -1,0 +1,18 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@layer utilities {
+  /*
+   * Hide native scrollbars while keeping the element scrollable. Used on
+   * the editor tab bar and insert toolbar so overflow doesn't surface a
+   * visible scrollbar on small viewports.
+   */
+  .scrollbar-hide {
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;      /* IE / legacy Edge */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;                 /* Chrome / Safari / Chromium-Edge */
+  }
+}

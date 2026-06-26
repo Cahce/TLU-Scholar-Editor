@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 73.000 73.000" width="73.000" height="73.000" data-width="73.000" data-height="73.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"></defs><defs class="clip-path"><linearGradient id="gq/cnCOHwEuo0bi2Djzik3A" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="0.000" y1="0.000" x2="1.000" y2="0.000"><stop offset="0.000%" stop-color="#2ecc40"/><stop offset="0.787%" stop-color="#2dcb43"/><stop offset="1.575%" stop-color="#2ccb45"/><stop offset="2.362%" stop-color="#2bca48"/><stop offset="3.150%" stop-color="#2aca4a"/><stop offset="3.937%" stop-color="#29c94d"/><stop offset="4.724%" stop-color="#29c94f"/><stop offset="5.512%" stop-color="#28c851"/><stop offset="6.299%" stop-color="#27c753"/><stop offset="7.087%" stop-color="#26c755"/><stop offset="7.874%" stop-color="#25c657"/><stop offset="8.661%" stop-color="#24c659"/><stop offset="9.449%" stop-color="#23c55b"/><stop offset="10.236%" stop-color="#22c55d"/><stop offset="11.024%" stop-color="#21c45f"/><stop offset="11.811%" stop-color="#20c360"/><stop offset="12.598%" stop-color="#1fc362"/><stop offset="13.386%" stop-color="#1ec264"/><stop offset="14.173%" stop-color="#1dc266"/><stop offset="14.961%" stop-color="#1bc167"/><stop offset="15.748%" stop-color="#1ac069"/><stop offset="16.535%" stop-color="#19c06a"/><stop offset="17.323%" stop-color="#18bf6c"/><stop offset="18.110%" stop-color="#17bf6d"/><stop offset="18.898%" stop-color="#16be6f"/><stop offset="19.685%" stop-color="#14be70"/><stop offset="20.472%" stop-color="#13bd72"/><stop offset="21.260%" stop-color="#12bc73"/><stop offset="22.047%" stop-color="#10bc75"/><stop offset="22.835%" stop-color="#0fbb76"/><stop offset="23.622%" stop-color="#0dbb78"/><stop offset="24.409%" stop-color="#0bba79"/><stop offset="25.197%" stop-color="#09b97a"/><stop offset="25.984%" stop-color="#08b97c"/><stop offset="26.772%" stop-color="#06b87d"/><stop offset="27.559%" stop-color="#04b87e"/><stop offset="28.346%" stop-color="#02b780"/><stop offset="29.134%" stop-color="#01b681"/><stop offset="29.921%" stop-color="#00b682"/><stop offset="30.709%" stop-color="#00b584"/><stop offset="31.496%" stop-color="#00b485"/><stop offset="32.283%" stop-color="#00b486"/><stop offset="33.071%" stop-color="#00b387"/><stop offset="33.858%" stop-color="#00b389"/><stop offset="34.646%" stop-color="#00b28a"/><stop offset="35.433%" stop-color="#00b18b"/><stop offset="36.220%" stop-color="#00b18c"/><stop offset="37.008%" stop-color="#00b08d"/><stop offset="37.795%" stop-color="#00af8e"/><stop offset="38.583%" stop-color="#00af90"/><stop offset="39.370%" stop-color="#00ae91"/><stop offset="40.157%" stop-color="#00ae92"/><stop offset="40.945%" stop-color="#00ad93"/><stop offset="41.732%" stop-color="#00ac94"/><stop offset="42.520%" stop-color="#00ac95"/><stop offset="43.307%" stop-color="#00ab96"/><stop offset="44.094%" stop-color="#00aa97"/><stop offset="44.882%" stop-color="#0a9"/><stop offset="45.669%" stop-color="#00a99a"/><stop offset="46.457%" stop-color="#00a89b"/><stop offset="47.244%" stop-color="#00a89c"/><stop offset="48.031%" stop-color="#00a79d"/><stop offset="48.819%" stop-color="#00a69e"/><stop offset="49.606%" stop-color="#00a69f"/><stop offset="50.394%" stop-color="#00a5a0"/><stop offset="51.181%" stop-color="#00a4a1"/><stop offset="51.969%" stop-color="#00a4a2"/><stop offset="52.756%" stop-color="#00a3a3"/><stop offset="53.543%" stop-color="#00a2a4"/><stop offset="54.331%" stop-color="#00a2a5"/><stop offset="55.118%" stop-color="#00a1a6"/><stop offset="55.906%" stop-color="#00a0a7"/><stop offset="56.693%" stop-color="#00a0a8"/><stop offset="57.480%" stop-color="#009fa9"/><stop offset="58.268%" stop-color="#009eaa"/><stop offset="59.055%" stop-color="#009eab"/><stop offset="59.843%" stop-color="#009dac"/><stop offset="60.630%" stop-color="#009cad"/><stop offset="61.417%" stop-color="#009cae"/><stop offset="62.205%" stop-color="#009baf"/><stop offset="62.992%" stop-color="#009ab0"/><stop offset="63.780%" stop-color="#0099b1"/><stop offset="64.567%" stop-color="#0099b2"/><stop offset="65.354%" stop-color="#0098b3"/><stop offset="66.142%" stop-color="#0097b4"/><stop offset="66.929%" stop-color="#0097b5"/><stop offset="67.717%" stop-color="#0096b6"/><stop offset="68.504%" stop-color="#0095b6"/><stop offset="69.291%" stop-color="#0094b7"/><stop offset="70.079%" stop-color="#0094b8"/><stop offset="70.866%" stop-color="#0093b9"/><stop offset="71.654%" stop-color="#0092ba"/><stop offset="72.441%" stop-color="#0091bb"/><stop offset="73.228%" stop-color="#0091bc"/><stop offset="74.016%" stop-color="#0090bd"/><stop offset="74.803%" stop-color="#008fbe"/><stop offset="75.591%" stop-color="#008ebf"/><stop offset="76.378%" stop-color="#008ec0"/><stop offset="77.165%" stop-color="#008dc0"/><stop offset="77.953%" stop-color="#008cc1"/><stop offset="78.740%" stop-color="#008bc2"/><stop offset="79.528%" stop-color="#008ac3"/><stop offset="80.315%" stop-color="#008ac4"/><stop offset="81.102%" stop-color="#0089c5"/><stop offset="81.890%" stop-color="#0088c6"/><stop offset="82.677%" stop-color="#0087c7"/><stop offset="83.465%" stop-color="#0086c7"/><stop offset="84.252%" stop-color="#0086c8"/><stop offset="85.039%" stop-color="#0085c9"/><stop offset="85.827%" stop-color="#0084ca"/><stop offset="86.614%" stop-color="#0083cb"/><stop offset="87.402%" stop-color="#0082cc"/><stop offset="88.189%" stop-color="#0081cd"/><stop offset="88.976%" stop-color="#0081cd"/><stop offset="89.764%" stop-color="#0080ce"/><stop offset="90.551%" stop-color="#007fcf"/><stop offset="91.339%" stop-color="#007ed0"/><stop offset="92.126%" stop-color="#007dd1"/><stop offset="92.913%" stop-color="#007cd2"/><stop offset="93.701%" stop-color="#007bd2"/><stop offset="94.488%" stop-color="#007ad3"/><stop offset="95.276%" stop-color="#007ad4"/><stop offset="96.063%" stop-color="#0079d5"/><stop offset="96.850%" stop-color="#0078d6"/><stop offset="97.638%" stop-color="#0077d7"/><stop offset="98.425%" stop-color="#0076d7"/><stop offset="99.213%" stop-color="#0075d8"/><stop offset="100.000%" stop-color="#0074d9"/></linearGradient></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pjcZabgrDY9kAK8LpigcbW0" data-page-width="73" data-page-height="73"><g data-tid="gjcZabgrDY9kAK8LpigcbW0" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pEPZT67MxWWcnI1GhKgQMTg"><g data-tid="gEPZT67MxWWcnI1GhKgQMTg"><path class="typst-shape" d="M 0 0 L 0 72.69292 L 72.69292 72.69292 L 72.69292 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="p99JkH0wtiCYn/Q/eBu6G28"><g data-tid="g99JkH0wtiCYn/Q/eBu6G28" class="typst-group"><g transform="translate(-0.000,-0.000)" data-tid="pjv1YLlBtXxY/qwqN8qChnA"><g data-tid="gjv1YLlBtXxY/qwqN8qChnA"><linearGradient id="pfjv1YLlBtXxY/qwqN8qChnA" gradientTransform="scale(56.692913,56.692913)" href="#gq/cnCOHwEuo0bi2Djzik3A" xlink:href="#gq/cnCOHwEuo0bi2Djzik3A"></linearGradient><path class="typst-shape" d="M 0 0 L 0 56.692913 L 56.692913 56.692913 L 56.692913 0 Z " fill-rule="nonzero" fill="url(#pfjv1YLlBtXxY/qwqN8qChnA)" /></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>

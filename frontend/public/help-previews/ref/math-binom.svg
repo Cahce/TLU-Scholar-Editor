@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 40.000 39.000" width="40.000" height="39.000" data-width="40.000" data-height="39.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"><path id="gIM1zLhEL" class="outline_glyph" d="M 409 353 C 409 327 423 314 450 314 C 485 314 508 345 508 379 C 508 418 476 445 437 445 C 392 445 344 415 291 356 C 250 311 217 282 190 269 L 291 679 C 289 688 287 694 274 694 C 242 694 166 685 154 684 C 139 682 132 675 132 660 C 132 650 141 645 159 645 C 178 645 204 646 204 632 L 59 43 C 56 32 55 25 55 21 C 55 0 66 -11 87 -11 C 104 -11 117 -3 124 12 C 129 21 147 92 179 226 C 231 221 286 196 286 146 C 286 131 279 101 279 91 C 279 34 316 -11 373 -11 C 431 -11 470 41 490 145 C 490 154 485 159 475 159 C 466 159 460 152 457 138 C 435 59 408 19 375 19 C 357 19 348 33 348 61 C 348 77 360 131 360 147 C 360 204 314 239 221 253 C 244 269 270 292 298 322 C 326 352 346 371 359 382 C 386 404 412 415 435 415 C 445 415 453 413 459 409 C 432 404 409 379 409 353 Z "/><path id="gIM1zLhQL" class="outline_glyph" d="M 537 137 C 514 58 481 18 440 18 C 427 18 420 28 420 47 C 420 61 426 84 438 115 C 478 224 498 296 498 333 C 498 403 451 442 381 442 C 322 442 271 416 230 363 C 222 407 187 442 136 442 C 80 442 58 390 44 345 C 34 313 29 294 29 287 C 29 278 34 273 45 273 C 50 273 53 274 56 276 C 61 285 64 292 65 299 C 83 375 106 413 133 413 C 151 413 160 399 160 371 C 160 358 155 331 144 290 L 87 63 C 84 50 78 24 78 19 C 78 -1 89 -11 111 -11 C 130 -11 144 -1 151 19 C 153 24 159 49 170 92 L 191 181 L 221 295 C 232 318 249 341 270 365 C 299 397 335 413 378 413 C 411 413 427 391 427 348 C 427 310 406 234 363 120 C 356 102 353 87 353 74 C 353 25 390 -11 438 -11 C 482 -11 517 14 542 64 C 561 104 571 131 571 144 C 571 153 566 158 555 158 C 552 158 537 149 537 137 Z "/><path id="gIM1zLrMW" class="outline_glyph" d="M 521 -646 C 533 -646 539 -640 539 -628 C 539 -622 537 -617 533 -613 C 446 -546 376 -432 324 -271 C 279 -134 257 1 257 133 L 257 367 C 257 499 279 634 324 771 C 376 932 446 1046 533 1113 C 537 1117 539 1122 539 1128 C 539 1140 533 1146 521 1146 C 519 1146 516 1145 511 1144 C 412 1068 331 950 267 791 C 208 644 179 502 179 367 L 179 133 C 179 -2 208 -144 267 -291 C 331 -450 412 -568 511 -644 C 516 -645 519 -646 521 -646 Z "/><path id="gIM1zLrQW" class="outline_glyph" d="M 86 -644 C 185 -568 266 -450 330 -291 C 389 -144 418 -2 418 133 L 418 367 C 418 502 389 644 330 791 C 266 950 185 1068 86 1144 C 81 1145 78 1146 76 1146 C 64 1146 58 1140 58 1128 C 58 1122 60 1117 64 1113 C 151 1046 221 932 273 771 C 318 634 340 499 340 367 L 340 133 C 340 1 318 -134 273 -271 C 221 -432 151 -546 64 -613 C 60 -617 58 -622 58 -628 C 58 -640 64 -646 76 -646 C 78 -646 81 -645 86 -644 Z "/></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pgX3knCP+J8IbGWkg36bPMw" data-page-width="40" data-page-height="39"><g data-tid="ggX3knCP+J8IbGWkg36bPMw" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="p+z5uFjRAtb8FsuJUyi2kaI"><g data-tid="g+z5uFjRAtb8FsuJUyi2kaI"><path class="typst-shape" d="M 0 0 L 0 38.116 L 39.928 38.116 L 39.928 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="pNvMzW6Z9apgaEABLinWHtI"><g data-tid="gNvMzW6Z9apgaEABLinWHtI" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="ptmB7Mp0YJRo7dnASoDBmNs"><g data-tid="gtmB7Mp0YJRo7dnASoDBmNs" class="typst-group"><g transform="translate(0.000,13.752)" data-tid="pTCEeoLMNxA0ol9KsW0l8vw"><g data-tid="gTCEeoLMNxA0ol9KsW0l8vw" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLrMW"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="37.31" height="62.50"><h5:div class="tsel" style="font-size: 62px">(</h5:div></foreignObject></g></g></g><g transform="translate(8.364,5.628)" data-tid="p4iDz0SZcVkwU/FWR3H2EnE"><g data-tid="g4iDz0SZcVkwU/FWR3H2EnE" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLhQL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="37.50" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑛</h5:div></foreignObject></g></g></g><g transform="translate(8.748,21.984)" data-tid="pWzfWDjRsGz43F/1UgSi/MI"><g data-tid="gWzfWDjRsGz43F/1UgSi/MI" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLhEL"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="33.50" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝑘</h5:div></foreignObject></g></g></g><g transform="translate(16.764,13.752)" data-tid="pVJxAetSYpqgxtXlvbmTfVw"><g data-tid="gVJxAetSYpqgxtXlvbmTfVw" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLrQW"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="37.31" height="62.50"><h5:div class="tsel" style="font-size: 62px">)</h5:div></foreignObject></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>

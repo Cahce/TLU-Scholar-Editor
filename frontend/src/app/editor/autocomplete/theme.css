@@ -1,0 +1,757 @@
+/* Typst autocomplete popup theme — VSCode/Kiro-style modern look.
+ *
+ * Scoped via `tlu-completion-tooltip` (set by `TypstAutocompleteExtension`)
+ * so other CodeMirror tooltips (linter, hover) keep their default theme.
+ *
+ * Color tokens come from `src/styles/theme.css` (--popover, --border,
+ * --accent, --primary, --muted-foreground, --radius, ...). The `.dark`
+ * class on `<html>` flips every token automatically — no extra rules
+ * needed for dark mode chrome. Brand icon hues live in `icons.css` and
+ * have their own `.dark` overrides where contrast demanded a lift.
+ */
+
+@import "./icons.css";
+
+/* -------------------------------------------------------------------------
+ * Popup container
+ * ---------------------------------------------------------------------- */
+.cm-tooltip.tlu-completion-tooltip {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow:
+    0 10px 30px -10px rgb(0 0 0 / 0.25),
+    0 4px 8px -4px rgb(0 0 0 / 0.08);
+  backdrop-filter: blur(8px);
+  padding: 4px;
+  font-family:
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  min-width: 280px;
+  max-width: 520px;
+  overflow: hidden;
+}
+
+.cm-tooltip.tlu-completion-tooltip ul {
+  font-family: inherit;
+  font-size: inherit;
+  max-height: 22em;
+}
+
+/* -------------------------------------------------------------------------
+ * Item row
+ * ---------------------------------------------------------------------- */
+.cm-tooltip.tlu-completion-tooltip ul li {
+  padding: 6px 10px;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: calc(var(--radius) - 4px);
+  margin: 1px 0;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color 80ms ease,
+    border-color 80ms ease;
+}
+
+.cm-tooltip.tlu-completion-tooltip ul li:hover {
+  background: var(--accent);
+}
+
+/* Selected row — VSCode-style: low-alpha primary tint + left accent stripe.
+ * Keep text in its normal color (don't invert to white) so the icon hues
+ * stay readable and the row matches shadcn DropdownMenuItem styling. */
+.cm-tooltip.tlu-completion-tooltip ul li[aria-selected] {
+  background: color-mix(in oklab, var(--primary) 14%, transparent);
+  color: var(--foreground);
+  border-left-color: var(--primary);
+}
+
+.cm-tooltip.tlu-completion-tooltip ul li[aria-selected]:hover {
+  background: color-mix(in oklab, var(--primary) 20%, transparent);
+}
+
+/* -------------------------------------------------------------------------
+ * Icon — Lucide SVG painted via mask-image (see icons.css)
+ * ---------------------------------------------------------------------- */
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon {
+  display: inline-block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: var(--cm-icon-color, var(--cm-icon-color-default));
+  -webkit-mask-image: var(--cm-icon-mask);
+  mask-image: var(--cm-icon-mask);
+  -webkit-mask-size: 14px 14px;
+  mask-size: 14px 14px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  font-style: normal;
+  opacity: 1;
+}
+
+/* Suppress CodeMirror's default letter glyph — we paint the SVG mask. */
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon::after {
+  content: none;
+}
+
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon-function {
+  --cm-icon-color: var(--cm-icon-color-function);
+  --cm-icon-mask: var(--cm-icon-mask-function);
+}
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon-property {
+  --cm-icon-color: var(--cm-icon-color-property);
+  --cm-icon-mask: var(--cm-icon-mask-property);
+}
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon-enum {
+  --cm-icon-color: var(--cm-icon-color-enum);
+  --cm-icon-mask: var(--cm-icon-mask-enum);
+}
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon-variable {
+  --cm-icon-color: var(--cm-icon-color-variable);
+  --cm-icon-mask: var(--cm-icon-mask-variable);
+}
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon-keyword {
+  --cm-icon-color: var(--cm-icon-color-keyword);
+  --cm-icon-mask: var(--cm-icon-mask-keyword);
+}
+.cm-tooltip.tlu-completion-tooltip .cm-completionIcon-text {
+  --cm-icon-color: var(--cm-icon-color-text);
+  --cm-icon-mask: var(--cm-icon-mask-text);
+}
+
+/* -------------------------------------------------------------------------
+ * Label & matched text
+ * ---------------------------------------------------------------------- */
+.cm-tooltip.tlu-completion-tooltip .cm-completionLabel {
+  font-family: inherit;
+  font-weight: 500;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* VSCode-style matched-prefix highlight: bold + primary color. */
+.cm-tooltip.tlu-completion-tooltip .cm-completionMatchedText {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.cm-tooltip.tlu-completion-tooltip ul li[aria-selected] .cm-completionMatchedText {
+  color: var(--primary);
+}
+
+/* -------------------------------------------------------------------------
+ * Detail (right-side signature / type)
+ * ---------------------------------------------------------------------- */
+.cm-tooltip.tlu-completion-tooltip .cm-completionDetail {
+  font-style: normal;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  margin-left: 4px;
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cm-tooltip.tlu-completion-tooltip ul li[aria-selected] .cm-completionDetail {
+  color: var(--muted-foreground);
+  opacity: 0.9;
+}
+
+/* -------------------------------------------------------------------------
+ * Section headers (e.g. "Phổ biến", "American Associations")
+ * ---------------------------------------------------------------------- */
+.cm-tooltip.tlu-completion-tooltip .cm-completionSection {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  padding: 8px 12px 4px 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+
+.cm-tooltip.tlu-completion-tooltip .cm-completionSection:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 4px;
+}
+
+/* Incomplete-list hints */
+.cm-tooltip.tlu-completion-tooltip .cm-completionListIncompleteTop,
+.cm-tooltip.tlu-completion-tooltip .cm-completionListIncompleteBottom {
+  font-style: italic;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  padding: 4px 12px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* -------------------------------------------------------------------------
+ * Custom scrollbar
+ * ---------------------------------------------------------------------- */
+.cm-tooltip.tlu-completion-tooltip ul {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
+}
+
+.cm-tooltip.tlu-completion-tooltip ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cm-tooltip.tlu-completion-tooltip ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cm-tooltip.tlu-completion-tooltip ul::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.cm-tooltip.tlu-completion-tooltip ul::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+  background-clip: padding-box;
+}
+
+/* -------------------------------------------------------------------------
+ * Info tooltip — side panel with rich documentation
+ *
+ * CodeMirror tags the tooltip with `cm-completionInfo` and sometimes
+ * `cm-tooltip` depending on version. Style both shapes so docs always
+ * render with the same chrome as the popup.
+ * ---------------------------------------------------------------------- */
+.cm-completionInfo,
+.cm-tooltip.cm-completionInfo {
+  font-family:
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  max-width: 360px;
+  max-height: 60vh;
+  overflow: auto;
+  padding: 0;
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow:
+    0 10px 30px -10px rgb(0 0 0 / 0.25),
+    0 4px 8px -4px rgb(0 0 0 / 0.08);
+  backdrop-filter: blur(8px);
+  line-height: 1.5;
+  margin-left: 4px;
+}
+
+.cm-info-rich {
+  padding: 0;
+}
+
+/* Header: icon + title + type pill */
+.cm-info-rich .cm-info-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cm-info-rich .cm-info-icon {
+  display: inline-block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--cm-icon-color, var(--cm-icon-color-default));
+  -webkit-mask-image: var(--cm-icon-mask);
+  mask-image: var(--cm-icon-mask);
+  -webkit-mask-size: 14px 14px;
+  mask-size: 14px 14px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.cm-info-rich .cm-info-icon-function {
+  --cm-icon-color: var(--cm-icon-color-function);
+  --cm-icon-mask: var(--cm-icon-mask-function);
+}
+.cm-info-rich .cm-info-icon-property {
+  --cm-icon-color: var(--cm-icon-color-property);
+  --cm-icon-mask: var(--cm-icon-mask-property);
+}
+.cm-info-rich .cm-info-icon-enum {
+  --cm-icon-color: var(--cm-icon-color-enum);
+  --cm-icon-mask: var(--cm-icon-mask-enum);
+}
+
+.cm-info-rich .cm-info-title {
+  font-weight: 600;
+  color: var(--foreground);
+  font-size: 13px;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cm-info-rich .cm-info-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+
+.cm-info-rich .cm-info-pill-required {
+  background: color-mix(in oklab, #f59e0b 18%, transparent);
+  color: #b45309;
+  border-color: color-mix(in oklab, #f59e0b 30%, transparent);
+}
+
+.dark .cm-info-rich .cm-info-pill-required {
+  color: #fbbf24;
+}
+
+/* Body */
+.cm-info-rich .cm-info-body {
+  padding: 8px 12px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cm-info-rich .cm-info-signature,
+.cm-info-rich .cm-info-tech {
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 12px;
+  color: var(--foreground);
+  background: var(--accent);
+  padding: 6px 8px;
+  border-radius: calc(var(--radius) - 4px);
+  border: 1px solid var(--border);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.cm-info-rich .cm-info-tech {
+  display: block;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+
+.cm-info-rich .cm-info-desc {
+  color: var(--popover-foreground);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Footer: alias chips */
+.cm-info-rich .cm-info-aliases {
+  padding: 8px 12px 10px 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cm-info-rich .cm-info-aliases-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+  margin-right: 2px;
+}
+
+.cm-info-rich .cm-info-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: var(--muted);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+/* -------------------------------------------------------------------------
+ * Iteration 2 additions
+ * ---------------------------------------------------------------------- */
+
+/* Inline description column — 4th cell in each popup row, after detail.
+ * Truncates with ellipsis when the popup is narrow, vanishes entirely
+ * when min-width can't be honoured (CodeMirror lays out rows in a flex
+ * container so `flex: 0 1 auto` lets us shrink gracefully). */
+.cm-tooltip.tlu-completion-tooltip .cm-completionDescription {
+  font-style: italic;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  margin-left: 8px;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.cm-tooltip.tlu-completion-tooltip
+  ul
+  li[aria-selected]
+  .cm-completionDescription {
+  color: var(--muted-foreground);
+  opacity: 1;
+}
+
+/* Return-type pill — rendered on the right of the info-tooltip header,
+ * styled like a code chip with an arrow. */
+.cm-info-rich .cm-info-return {
+  display: inline-flex;
+  align-items: center;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in oklab, var(--primary) 24%, transparent);
+  flex: 0 0 auto;
+  margin-left: 4px;
+}
+
+/* Generic section inside the info body (parameters, examples, enum
+ * preview). Each section has a small uppercase heading and a body that
+ * stacks below. */
+.cm-info-rich .cm-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.cm-info-rich .cm-info-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+  margin: 0;
+  padding: 4px 0 0 0;
+  border-top: 1px dashed var(--border);
+}
+
+/* Parameter table — tinymist/VSCode-style structured docs. Columns:
+ * name, type, required marker, description. Borderless to feel light. */
+.cm-info-rich .cm-info-params {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: fixed;
+}
+
+.cm-info-rich .cm-info-params thead th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--border);
+  font-family: inherit;
+}
+
+.cm-info-rich .cm-info-params thead th:nth-child(1) {
+  width: 28%;
+}
+.cm-info-rich .cm-info-params thead th:nth-child(2) {
+  width: 24%;
+}
+.cm-info-rich .cm-info-params thead th:nth-child(3) {
+  width: 6%;
+  text-align: center;
+}
+.cm-info-rich .cm-info-params thead th:nth-child(4) {
+  width: 42%;
+}
+
+.cm-info-rich .cm-info-params tbody tr {
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
+}
+
+.cm-info-rich .cm-info-params tbody tr:last-child {
+  border-bottom: none;
+}
+
+.cm-info-rich .cm-info-params td {
+  padding: 5px 6px;
+  vertical-align: top;
+  word-break: break-word;
+  color: var(--foreground);
+  line-height: 1.4;
+}
+
+.cm-info-rich .cm-info-params td code {
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 11px;
+  background: var(--muted);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--foreground);
+}
+
+.cm-info-rich .cm-info-required-cell {
+  text-align: center;
+  font-weight: 700;
+}
+
+.cm-info-rich .cm-info-required {
+  color: #f59e0b;
+}
+
+.dark .cm-info-rich .cm-info-required {
+  color: #fbbf24;
+}
+
+/* Example code block — block of monospace with a soft tinted
+ * background to set it apart from the description prose. */
+.cm-info-rich .cm-info-example {
+  margin: 0;
+  padding: 8px 10px;
+  background: color-mix(in oklab, var(--primary) 6%, var(--accent));
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 4px);
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 12px;
+  color: var(--foreground);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.55;
+  overflow-x: auto;
+}
+
+.cm-info-rich .cm-info-example code {
+  font-family: inherit;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* Enum-value preview — chips showing the first few allowed values for
+ * a parameter that has a closed value set. */
+.cm-info-rich .cm-info-enum-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.cm-info-rich .cm-info-enum-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--muted);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.cm-info-rich .cm-info-enum-more {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  font-style: italic;
+  padding-left: 4px;
+}
+
+/* -------------------------------------------------------------------------
+ * Iteration 3 — Signature help + hover tooltip
+ * ---------------------------------------------------------------------- */
+
+/* Signature help — thin popup above the line that mirrors tinymist's
+ * floating parameter hint. CodeMirror wraps our DOM inside its own
+ * `.cm-tooltip` so we style both the wrapper and our inner shell. */
+.cm-tooltip:has(> .cm-signature-tooltip),
+.cm-tooltip-above:has(> .cm-signature-tooltip) {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.cm-signature-tooltip {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow:
+    0 10px 30px -10px rgb(0 0 0 / 0.25),
+    0 4px 8px -4px rgb(0 0 0 / 0.08);
+  backdrop-filter: blur(8px);
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 720px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+}
+
+.cm-signature-tooltip .cm-sig-line {
+  white-space: normal;
+  word-break: break-word;
+  color: var(--foreground);
+}
+
+.cm-signature-tooltip .cm-sig-name {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.cm-signature-tooltip .cm-sig-open,
+.cm-signature-tooltip .cm-sig-close,
+.cm-signature-tooltip .cm-sig-comma {
+  color: var(--muted-foreground);
+}
+
+.cm-signature-tooltip .cm-sig-param {
+  color: var(--foreground);
+  opacity: 0.75;
+  transition: opacity 80ms ease;
+}
+
+.cm-signature-tooltip .cm-sig-param.cm-sig-active {
+  opacity: 1;
+  font-weight: 700;
+  color: var(--foreground);
+  background: color-mix(in oklab, var(--primary) 14%, transparent);
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: 0 -2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.cm-signature-tooltip .cm-sig-returns {
+  color: var(--primary);
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+/* Description line under the signature — name in bold, info in normal weight. */
+.cm-signature-tooltip .cm-sig-desc {
+  font-family:
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+  line-height: 1.5;
+}
+
+.cm-signature-tooltip .cm-sig-desc-name {
+  font-weight: 600;
+  color: var(--foreground);
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
+
+.cm-signature-tooltip .cm-sig-desc-required {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.dark .cm-signature-tooltip .cm-sig-desc-required {
+  color: #fbbf24;
+}
+
+.cm-signature-tooltip .cm-sig-desc-sep {
+  color: var(--muted-foreground);
+  opacity: 0.6;
+}
+
+.cm-signature-tooltip .cm-sig-desc-text {
+  color: var(--popover-foreground);
+}
+
+/* Hover tooltip — same chrome as the autocomplete info tooltip, but
+ * triggered by mouse hover instead of selection. CodeMirror tags it
+ * with `cm-tooltip-hover` automatically; we override the default
+ * tooltip styling so the rich `cm-info-rich` DOM inside renders
+ * correctly. */
+.cm-tooltip-hover.cm-tooltip {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.cm-hover-tooltip {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow:
+    0 10px 30px -10px rgb(0 0 0 / 0.25),
+    0 4px 8px -4px rgb(0 0 0 / 0.08);
+  backdrop-filter: blur(8px);
+  font-family:
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  max-width: 480px;
+  max-height: 60vh;
+  overflow: auto;
+  line-height: 1.5;
+}
+
+.cm-hover-tooltip .cm-info-rich {
+  padding: 0;
+}

@@ -1,0 +1,70 @@
+/*
+ * Inline Typst math preview — floating pill shown in a CodeMirror TOOLTIP
+ * below the `$ … $` math region the cursor is currently inside. The content
+ * is an SVG produced by compiling the fragment with typst.ts; we style only
+ * the outer pill here and let the SVG's natural dimensions drive the size.
+ */
+
+/* The tooltip container CM creates around our pill: strip the default
+ * theme chrome and let every click fall through to the text underneath —
+ * the preview is purely decorative and must never trap the caret. */
+.cm-tooltip:has(> .cm-mathlive-preview) {
+  background: transparent;
+  border: none;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.cm-mathlive-preview {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  pointer-events: none;
+  transition: border-color 0.15s, background-color 0.15s;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.cm-mathlive-preview--display {
+  /* Display math gets a touch more breathing room. */
+  padding: 6px 10px;
+}
+
+/* Tint the pill while the SVG is still compiling so the user knows
+   something is happening. */
+.cm-mathlive-preview[data-state="loading"] {
+  background-color: #f8fafc;
+  border-style: dashed;
+  color: #64748b;
+}
+
+.cm-mathlive-preview[data-state="error"] {
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+/* The placeholder text shown until the SVG arrives. */
+.cm-mathlive-preview__placeholder {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Mono",
+    "Roboto Mono", Consolas, "Courier New", monospace;
+  font-size: 0.85rem;
+  color: inherit;
+}
+
+/* The compiled SVG itself. typst.ts ships a self-contained <svg> so we just
+   constrain its height to keep huge equations from blowing up the line. */
+.cm-mathlive-preview svg {
+  display: inline-block;
+  max-height: 32px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.cm-mathlive-preview--display svg {
+  /* The preview no longer sits in the text flow, so tall equations
+   * (matrices, cases) can breathe without pushing document lines around. */
+  max-height: 140px;
+}

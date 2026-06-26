@@ -1,0 +1,81 @@
+<svg style="overflow: visible;" class="typst-doc" viewBox="0 0 78.000 25.000" width="78.000" height="25.000" data-width="78.000" data-height="25.000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><style type="text/css">.typst-text {
+  pointer-events: bounding-box;
+}
+
+.tsel span,
+.tsel {
+  left: 0;
+  position: fixed;
+  text-align: justify;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align-last: justify;
+  color: transparent;
+  white-space: pre;
+}
+.tsel span::-moz-selection,
+.tsel::-moz-selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.tsel span::selection,
+.tsel::selection {
+  color: transparent;
+  background: #7db9dea0;
+}
+.pseudo-link {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
+}
+svg {
+  fill: none;
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  fill: var(--glyph_fill);
+  stroke: var(--glyph_stroke);
+}
+
+.outline_glyph path,
+path.outline_glyph {
+  transition: 0.2s fill stroke;
+}
+.hover .typst-text {
+  --glyph_fill: #66bab7;
+  --glyph_stroke: #66bab7;
+}
+
+.typst-jump-ripple,
+.typst-debug-react-ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+}
+.typst-jump-ripple {
+  border: 1px solid #66bab7;
+}
+.typst-debug-react-ripple {
+  border: 1px solid #cb1b45;
+}
+@keyframes typst-jump-ripple-effect {
+  to {
+    width: 10vw;
+    height: 10vw;
+    opacity: 0.01;
+    margin: -5vw;
+  }
+}
+@keyframes typst-debug-react-ripple-effect {
+  to {
+    width: 3vw;
+    height: 3vw;
+    opacity: 0.01;
+    margin: -1.5vw;
+  }
+}
+</style><defs class="glyph"><path id="gIM1zLu4K" class="outline_glyph" d="M 137 3 C 155 3 217 0 236 0 C 251 0 258 8 258 23 C 258 32 252 38 239 39 C 210 40 196 50 196 69 C 196 78 205 98 224 128 C 251 173 270 206 283 228 L 526 228 C 526 221 527 207 530 185 C 537 112 541 72 541 67 C 541 48 519 39 474 39 C 455 39 446 31 446 15 C 446 5 452 0 464 0 C 488 0 564 3 588 3 C 608 3 679 0 699 0 C 714 0 721 8 721 24 C 721 34 712 39 694 39 C 666 39 649 41 644 44 C 639 47 635 56 634 71 L 574 689 C 571 708 572 716 551 716 C 539 716 529 710 522 697 L 178 120 C 148 70 108 43 59 39 C 43 38 35 30 35 15 C 35 5 41 0 52 0 C 68 0 121 3 137 3 Z M 492 577 L 522 267 L 307 267 Z "/><path id="gIM1zLu8K" class="outline_glyph" d="M 756 543 C 756 634 666 683 568 683 L 236 683 C 213 683 203 682 203 659 C 203 643 223 644 235 644 C 265 643 283 641 288 640 C 293 639 295 636 295 631 C 295 629 294 623 291 613 L 159 82 C 154 60 144 47 129 42 C 122 40 104 39 73 39 C 52 39 42 31 42 15 C 42 5 52 0 73 0 L 426 0 C 491 0 551 20 608 59 C 671 102 703 155 703 217 C 703 296 638 344 567 358 C 655 379 756 446 756 543 Z M 554 644 C 623 644 658 612 658 547 C 658 496 638 454 596 420 C 554 386 507 370 456 370 L 317 370 L 377 610 C 385 644 385 644 427 644 Z M 582 299 C 596 276 603 253 603 228 C 603 176 583 131 542 94 C 501 57 455 39 402 39 L 267 39 C 257 39 250 39 246 40 C 240 40 237 42 237 45 C 237 46 237 49 238 53 C 269 180 293 276 309 340 L 493 340 C 536 340 565 326 582 299 Z "/><path id="gIM1zLgMV" class="outline_glyph" d="M 24 226 L 507 226 L 507 274 L 24 274 C 8 274 0 263 0 250 C 0 237 8 226 24 226 Z "/><path id="gIM1zLgQV" class="outline_glyph" d="M 0 226 L 337 226 L 337 274 L 0 274 Z "/><path id="gIM1zLgUV" class="outline_glyph" d="M 496 234 C 503 237 507 243 507 250 C 507 257 503 263 496 266 C 448 282 403 316 362 368 C 334 403 315 444 306 491 C 303 504 296 510 283 510 C 267 510 259 502 259 485 L 260 483 L 260 482 C 277 395 321 326 393 274 L 0 274 L 0 226 L 393 226 C 321 174 277 105 260 18 L 260 17 L 259 15 C 259 -2 267 -10 283 -10 C 296 -10 303 -4 306 9 C 315 56 334 97 362 132 C 403 184 448 218 496 234 Z "/></defs><defs class="clip-path"></defs><style type="text/css"></style><g class="typst-page" transform="translate(0, 0)" data-tid="pxxGAQkdk1HMT2ROFdiD0YY" data-page-width="78" data-page-height="25"><g data-tid="gxxGAQkdk1HMT2ROFdiD0YY" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pgzQ2u/VIjgAabwG5RfnxgI"><g data-tid="ggzQ2u/VIjgAabwG5RfnxgI"><path class="typst-shape" d="M 0 0 L 0 24.712 L 77.07467 24.712 L 77.07467 0 Z " fill-rule="nonzero" fill="#fff" /></g></g><g transform="translate(8.000,8.000)" data-tid="pz/yGcsEZ5k49q4Ppoedj1g"><g data-tid="gz/yGcsEZ5k49q4Ppoedj1g" class="typst-group"><g transform="translate(0.000,0.000)" data-tid="pjZ8U3Am4+uIe8hLvFugth8"><g data-tid="gjZ8U3Am4+uIe8hLvFugth8" class="typst-group"><g transform="translate(0.000,8.592)" data-tid="pEG7cKN+zg2YdYdtCt3YngY"><g data-tid="gEG7cKN+zg2YdYdtCt3YngY" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLu4K"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="46.88" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝐴</h5:div></foreignObject></g></g></g><g transform="translate(12.333,8.592)" data-tid="pnwSxX01560YdGy/REk/4Cg"><g data-tid="gnwSxX01560YdGy/REk/4Cg" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLgMV"/><use x="472.5" y="0" href="#gIM1zLgQV"/><use x="759" y="0" href="#gIM1zLgQV"/><use x="1045" y="0" href="#gIM1zLgQV"/><use x="1331.5" y="0" href="#gIM1zLgQV"/><use x="1618" y="0" href="#gIM1zLgQV"/><use x="1904" y="0" href="#gIM1zLgQV"/><use x="2190.5" y="0" href="#gIM1zLgQV"/><use x="2493" y="0" href="#gIM1zLgUV"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="187.50" height="62.50"><h5:div class="tsel" style="font-size: 62px">→</h5:div></foreignObject></g></g></g><g transform="translate(51.667,8.592)" data-tid="pQVmJaRTpyIg/yLCQxG4Lwc"><g data-tid="gQVmJaRTpyIg/yLCQxG4Lwc" class="typst-text" fill="#000" transform="scale(0.012,-0.012)"><use x="0" y="0" href="#gIM1zLu8K"/><g transform="scale(16,-16)"><foreignObject x="0" y="-50.38" width="49.00" height="62.50"><h5:div class="tsel" style="font-size: 62px">𝐵</h5:div></foreignObject></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g><g transform="translate(0.000,0.000)" data-tid="pDgsjYLTg9DIxe7neLL45F8"><g data-tid="gDgsjYLTg9DIxe7neLL45F8" class="typst-content-hint" data-hint="a"></g></g></g></g></g></g></svg>
